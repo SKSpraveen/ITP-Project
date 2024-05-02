@@ -164,13 +164,13 @@ function Payments() {
                                         <form onSubmit={handleSubmitCard} style={{ fontWeight: "700", color: "rgba(255, 74, 2, 0.816)" }}>
                                             <div className='row'>
                                             <div className="px-2 col-lg-5 mb-3">
-                                                <label className="form-label">Card Number</label>
+                                                <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Card Number</label>
                                                 <input type="numbers" className="form-control" placeholder="5791 5721 .... ...." value={card} onChange={e => setCard(e.target.value)} maxLength={'16'} />
 
                                                 
                                             </div>
                                             <div className="px-2 col-lg-5 mb-3">
-                                                        <label className="form-label">Amount</label>
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Amount</label>
                                                         <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                             </div>
@@ -178,8 +178,8 @@ function Payments() {
                                            
                                             <div className="row">
                                                 <div className="col-lg-6">
-                                                    <div className="mb-3">
-                                                        <label className="form-label">Name on card</label>
+                                                    <div className="mb-3"style={{  color: "rgba(255, 74, 2, 0.816)" }}>
+                                                        <label className="form-label" >Name on card</label>
                                                         <select className="form-select" id="cardType" name="cardType" value={cname} onChange={e => setCname(e.target.value)}>
                                                             <option value="MasterCard">MasterCard</option>
                                                             <option value="Visa">Visa</option>
@@ -189,22 +189,22 @@ function Payments() {
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
-                                                        <label className="form-label">Expiry date</label>
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Expiry date</label>
                                                         <input type="date(year and month)" className="form-control" placeholder="MM/YY" value={exdate} onChange={e => setExdate(e.target.value)} />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
-                                                        <label className="form-label">CVV Code</label>
+                                                        <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>CVV Code</label>
                                                         <input type="password" className="form-control" value={cvv} onChange={e => setCvv(e.target.value)} maxLength={4} />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="px-1 col-lg-8 mb-3">
-                                                <label className="form-label">Email</label>
+                                                <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Email</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px' }}>Submit</button>
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>Submit</button>
 
                                         </form>
                                     </div>
@@ -239,28 +239,28 @@ function Payments() {
                                     <div className="accordion-body">
                                         <form onSubmit={handleSubmitBankPayment} style={{ fontWeight: "700", color: "rgba(255, 74, 2, 0.816)" }}>
                                             <div className="px-2 col-lg-6 mb-3">
-                                                <label className="form-label">Email address</label>
+                                                <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Email address</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
                                             <div className="row">
                                                 <div className="col-lg-6">
                                                     <div className="mb-3">
-                                                        <label className="form-label">Account Number</label>
+                                                        <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Account Number</label>
                                                         <input type="text" className="form-control" placeholder="EX:2345677654322444" value={accountnumber} onChange={e => setAccountNumber(e.target.value)} />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
-                                                        <label className="form-label">Amount</label>
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Amount</label>
                                                         <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="px-2 col-lg-6 mb-3">
-                                                <label className="form-label">Upload Slip</label>
+                                                <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Upload Slip</label>
                                                 <input type="file" className="form-control" value={slip} onChange={e => setSlip(e.target.value)} />
                                             </div>
-                                            <button type="submit" className="btn btn-primary"style={{ width: '600px' }}>
+                                            <button type="submit" className="btn btn-primary"style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>
                                                 Submit
                                             </button>
                                         </form>
@@ -297,32 +297,32 @@ function Payments() {
                                     <div className="accordion-body">
                                         <form onSubmit={handleSubmitDirectPayment} style={{ fontWeight: "700", color: "rgba(255, 74, 2, 0.816)" }}>
                                             <div className="px-2 col-lg-6 mb-3">
-                                                <label className="form-label">Name</label>
+                                                <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Name</label>
                                                 <input type="text" className="form-control" value={name} onChange={e => setName(e.target.value)} />
                                             </div>
                                             <div className="px-2 col-lg-6 mb-3">
-                                                <label className="form-label">Repair Agent Name</label>
+                                                <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)"}}>Repair Agent Name</label>
                                                 <input type="text" className="form-control" value={rgname} onChange={e => setRgname(e.target.value)} />
                                             </div>
                                             <div className="px-2 col-lg-6 mb-3">
-                                                <label className="form-label">Email address</label>
+                                                <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)"}}>Email address</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={cemail} onChange={e => setCemail(e.target.value)} />
                                             </div>
                                             <div className="row">
                                                 <div className="col-lg-6">
                                                     <div className="mb-3">
-                                                        <label className="form-label">Whatsapp Number</label>
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)"}}>Whatsapp Number</label>
                                                         <input type="tel" className="form-control" placeholder="EX:+94 71077 5688" value={contactnumber} onChange={e => setContactnumber(e.target.value)} />
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
-                                                        <label className="form-label">Amount</label>
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)"}}>Amount</label>
                                                         <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px' }}>
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>
                                                 Submit
                                             </button>
                                         </form>
