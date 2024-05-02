@@ -17,6 +17,8 @@ import AllStockDetails from './Pages/Sasindu/AllStockDetails';
 import EditStock from './Pages/Sasindu/EditStock';
 import SellingPrice from './Pages/Sasindu/SellingPrice';
 import Inventory from './Pages/Sasindu/Inventory';
+
+
 //anjana
 import NumberPageForm from './Pages/Anjana/NumberPageForm';
 import reportWebVitals from './Pages/Anjana/reportWebVitals';
@@ -27,6 +29,12 @@ import Payments from './Pages/Anjana/Payments';
 
 import Repair from './Pages/Samidi/Repair';
 import Cart_View from './Installation/Cart_View';
+
+
+//Samidi
+import OrderManagerDashboard from './Pages/Samidi/OrderManagerDashboard';
+import ViewTable from './Pages/Samidi/ViewTable';
+
 
 import Financialhome from './Pages/Rasindu/financialhome.js';
 import Addexpences from './Pages/Rasindu/Addexpences';
@@ -78,6 +86,11 @@ ReactDOM.render(
         <Route path='/view/:itemId' element={<Installation />} />
         <Route path='/repair' element={<Repair />} />
         <Route path='/Cart_View' element={<Cart_View />} />
+
+        <Route path='/omdashboard' element={<OrderManagerDashboard />} />
+        <Route path='/viewTable' element={<ViewTable />} />
+
+        
 
         <Route path="/Payments" element={<Payments />} />
       <Route path="/NumberPageForm" element={<NumberPageForm />} />
