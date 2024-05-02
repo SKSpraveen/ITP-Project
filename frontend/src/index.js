@@ -37,11 +37,24 @@ import ExpenseReport from './Pages/Rasindu/ExpenseReport.js';
 import FinalReport from './Pages/Rasindu/finalReport.js';
 
 
+//Kavishka
+import Admin from './Pages/Kavishka/Admin.js';
+import Signup from './Pages/Kavishka/Signup.js';
+import Login from './Pages/Kavishka/Login.js';
+import UserHome from './Components/Kavishka/home_viwe.js';
+import UserProfile from './Pages/Kavishka/userProfile.js';
+import StaffSignup from './Pages/Kavishka/StaffSignup.js'
+import { AuthContextProvider } from './context/AuthContext.js';
+import AdminDash from './Pages/Kavishka/adminDash.js';
+import StaffLogin from './Pages/Kavishka/StaffLogin.js';
+
+
 
 
 ReactDOM.render(
 
   <BrowserRouter>
+    <AuthContextProvider>
       <Routes>
         <Route path='/' element={<App />} />
         <Route path='/cctv' element={<CCTV />} />
@@ -80,8 +93,19 @@ ReactDOM.render(
         <Route path='/updateExpence/:expenceId' element={<UpdateExpence />}/>
         <Route path='/report' element={<ExpenseReport />}/>
         <Route path='/finalReport' element={<FinalReport/>}/>
+
+        <Route path='/signup' element={< Signup />} />
+        <Route path='/userhome' element={<UserHome/>}/>
+        <Route path='/user' element={<Admin/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/profile' element={<UserProfile/>}/>
+        <Route path='/Admin' element={<Admin/>}/>
+        <Route path='/userDetails' element={<AdminDash/>}/>
+        <Route path='/staff' element={<StaffSignup/>}/>
+        <Route path='/stafflogin' element={<StaffLogin/>}/>
         
       </Routes>
+      </AuthContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );
