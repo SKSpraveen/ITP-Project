@@ -161,7 +161,7 @@ function Payments() {
                                     data-parent="#accordionPayment"
                                 >
                                     <div className="accordion-body" style={{ background: "rgba(16, 16, 16, 0.926)" }}>
-                                        <form onSubmit={handleSubmitCard} style={{ fontWeight: "700", color: "rgba(255, 74, 2, 0.816)" }}>
+                                        <form onSubmit={handleSubmitCard}>
                                             <div className='row'>
                                             <div className="px-2 col-lg-5 mb-3">
                                                 <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Card Number</label>
@@ -204,9 +204,9 @@ function Payments() {
                                                 <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Email</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <div style={{  color: "rgba(255, 74, 2, 0.816)" }}>
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "white" }}>Submit</button>
-                                            </div>
+                                            
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color:"rgba(255, 74, 2, 0.816)" }}>Submit</button>
+                                            
                                         </form>
                                     </div>
                                 </div>

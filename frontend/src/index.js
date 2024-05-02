@@ -66,11 +66,7 @@ ReactDOM.render(
         <Route path='/repair' element={<Repair />} />
         <Route path='/Cart_View' element={<Cart_View />} />
 
-        <Route path="/Payments" element={<Payments />} />
-      <Route path="/NumberPageForm" element={<NumberPageForm />} />
-      <Route path="/DirectPageForm" element={<DirectPageForm />} />
-      <Route path="/BankPageForm" element={<BankPageForm/>} />
-
+        
 
         <Route path='/' element={<App />}/>
         <Route path='/exform' element={<Expence />}/>
@@ -80,6 +76,13 @@ ReactDOM.render(
         <Route path='/updateExpence/:expenceId' element={<UpdateExpence />}/>
         <Route path='/report' element={<ExpenseReport />}/>
         <Route path='/finalReport' element={<FinalReport/>}/>
+
+        <Route path='/' element={<App />} />
+        <Route path="/Payments" element={<Payments />} />
+      <Route path="/NumberPageForm" element={<NumberPageForm />} />
+      <Route path="/DirectPageForm" element={<DirectPageForm />} />
+      <Route path="/BankPageForm" element={<BankPageForm/>} />
+
         
       </Routes>
   </BrowserRouter>,
