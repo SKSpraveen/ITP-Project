@@ -5,6 +5,8 @@ const cors = require('cors')
 const app = express()
 const host = 'localhost';
 
+require('dotenv').config();
+const dotenv = require("dotenv");
 
 const PORT = process.env.PORT || 8070
 
@@ -44,3 +46,14 @@ app.use("/Cart",cartRouter);
 const ExpencesRouter = require("./routes/Rasindu/Expence.js");
 app.use("/Expence",ExpencesRouter);
 
+const userRoute =require('./routes/Kavishka/userRoute')
+app.use('/api/auth',userRoute);
+
+const user =require('./routes/Kavishka/user')
+app.use("/api/auth",user);
+
+const staff = require('./routes/Kavishka/staffRoute')
+app.use("/api/auth",staff);
+
+const staff1 =require('./routes/Kavishka/staff')
+app.use("/api/auth",staff1);

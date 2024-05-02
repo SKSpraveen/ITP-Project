@@ -39,7 +39,7 @@ function Header() {
             <img src="../Images/pe.png" alt="" style={{ width: "5%", height: "5%", marginLeft: "1%" }} />
             <button
                 className="login-btn"
-                onClick={() => navigate("")}
+                onClick={() => navigate("/signup")}
                 style={{
                     marginLeft: "87%",
                     backgroundColor: "#E9E9E9",
@@ -47,7 +47,7 @@ function Header() {
                     border: "none",
                 }}
             >
-                <i className="fa fa-user-o" aria-hidden="true" style={{ fontSize: "17px", color: "black", fontWeight: "550" }}>
+                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/signup")} style={{ fontSize: "17px", color: "black", fontWeight: "550" }}>
                     {" "}
                     My Account
                 </i>
