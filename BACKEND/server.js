@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const app = express()
 const host = 'localhost';
+const router=require('../BACKEND/routes/Anjana/router.js')
 
 require('dotenv').config();
 const dotenv = require("dotenv");
@@ -25,6 +26,7 @@ const connect = async () =>{
     }
 };
 connect();
+app.use('/api', router);
 
 const server =app.listen(PORT,host,()=>{
 
