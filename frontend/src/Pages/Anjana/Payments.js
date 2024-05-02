@@ -178,8 +178,8 @@ function Payments() {
                                            
                                             <div className="row">
                                                 <div className="col-lg-6">
-                                                    <div className="mb-3"style={{  color: "rgba(255, 74, 2, 0.816)" }}>
-                                                        <label className="form-label" >Name on card</label>
+                                                    <div className="mb-3">
+                                                        <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }} >Name on card</label>
                                                         <select className="form-select" id="cardType" name="cardType" value={cname} onChange={e => setCname(e.target.value)}>
                                                             <option value="MasterCard">MasterCard</option>
                                                             <option value="Visa">Visa</option>
@@ -204,8 +204,9 @@ function Payments() {
                                                 <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Email</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>Submit</button>
-
+                                            <div style={{  color: "rgba(255, 74, 2, 0.816)" }}>
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "white" }}>Submit</button>
+                                            </div>
                                         </form>
                                     </div>
                                 </div>
