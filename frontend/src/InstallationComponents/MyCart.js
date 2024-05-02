@@ -65,7 +65,7 @@ function MyCart() {
                 <div class="card-body">
                     <h5 class="card-title"><i class="fa fa-calculator" aria-hidden="true"></i>&emsp;Cart totals</h5><hr /><br />
                     <p class="card-text" style={{marginLeft:"18px"}}>Total amount</p>
-                    <button className="checkout" ><a href="#" style={{textDecoration:"none",color:"white"}}>Checkout</a></button>
+                    <button className="checkout" onClick={() => navigate('/payments')} ><a href="#" style={{textDecoration:"none",color:"white"}}>Checkout</a></button>
                 </div>
             </div>
             <br /> <br />

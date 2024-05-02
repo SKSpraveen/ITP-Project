@@ -8,6 +8,9 @@ import NumberPageForm from './NumberPageForm';
 import Axios from 'axios';
 import DirectPageForm from './DirectPageForm';
 import { Padding, Payment } from '@mui/icons-material';
+import axios from "axios";
+import { useParams } from "react-router-dom";
+
 
 const styles = {
     headerStyle: {
@@ -39,6 +42,8 @@ function Payments() {
     const [amount, setAmount] = useState('');
     const [accountnumber, setAccountNumber] = useState('');
     const [slip, setSlip] = useState('');
+    const [orderQuantity,setorderQuantity]=useState('')
+    const [product,setproduct]=useState('')
 
     const handleSelectorClick = (selectorId) => {
         setActiveSelector((prevSelector) => (prevSelector === selectorId ? null : selectorId));
@@ -47,7 +52,7 @@ function Payments() {
     const handleSubmitCard = async (e) => {
         e.preventDefault();
 
-        if (!card || !cname || !exdate || !cvv || !email||!amount) {
+        if (!card || !cname || !exdate || !cvv || !email||!amount||!orderQuantity||!product) {
             alert("Please fill in all fields");
             return;
         }
@@ -58,7 +63,9 @@ function Payments() {
             exdate: exdate,
             cvv: cvv,
             email: email,
-            amount:amount
+            amount:amount,
+            orderQuantity:orderQuantity,
+            product:product
         };
 
         try {
@@ -73,7 +80,7 @@ function Payments() {
     const handleSubmitBankPayment = async (e) => {
         e.preventDefault();
 
-        if (!email || !accountnumber || !amount || !slip) {
+        if (!email || !accountnumber || !amount || !slip||!product||!orderQuantity) {
             alert("Please fill in all fields");
             return;
         }
@@ -82,7 +89,9 @@ function Payments() {
             email: email,
             accountnumber: accountnumber,
             amount: amount,
-            slip: slip
+            slip: slip,
+            product:product,
+            orderQuantity:orderQuantity
         };
 
         try {
@@ -97,7 +106,7 @@ function Payments() {
     const handleSubmitDirectPayment = async (e) => {
         e.preventDefault();
 
-        if (!name || !rgname || !cemail || !contactnumber || !amount) {
+        if (!name || !rgname || !cemail || !contactnumber || !amount ||!product||!orderQuantity) {
             alert("Please fill in all fields");
             return;
         }
@@ -107,7 +116,9 @@ function Payments() {
             rgname: rgname,
             cemail: cemail,
             contactnumber: contactnumber,
-            amount: amount
+            amount: amount,
+            product:product,
+            orderQuantity:orderQuantity
         };
 
         try {
@@ -119,16 +130,37 @@ function Payments() {
         }
     };
 
+
+
+
+    const { itemId } = useParams();
+    const [itemDetails, setItemDetails] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8070/advertisement/${itemId}`)
+            .then((response) => {
+                setItemDetails(response.data);
+                setLoading(false);
+            })
+            .catch((error) => {
+                console.error("Error fetching item details:", error);
+                setLoading(false);
+            });
+    }, [itemId]);
+
+    
+
     return (
         <div>
             <Header />
             <br>
             
-            </br>
+            </br> <br /> <br />
             <div className="container">
                 <p></p>
-                <h1 className="h3 mb-5" style={{ fontWeight: "900", color: "rgba(255, 74, 2, 0.816)" }}>Select Payment Method</h1>
-                <div className="rows">
+                <h1 className="h3 mb-5" style={{ fontWeight: "900", color: "rgba(255, 74, 2, 0.816)",marginLeft:"37%" }}>Select Payment Method</h1>
+                <div className="rows" style={{marginLeft:"15%"}}>
                     <div className="col-lg-10">
                         <div className="accordion" id="accordionPayment">
                             {/* Credit card */}
@@ -177,7 +209,7 @@ function Payments() {
 
                                            
                                             <div className="row">
-                                                <div className="col-lg-6">
+                                                <div className="col-lg-5">
                                                     <div className="mb-3">
                                                         <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }} >Name on card</label>
                                                         <select className="form-select" id="cardType" name="cardType" value={cname} onChange={e => setCname(e.target.value)}>
@@ -187,25 +219,39 @@ function Payments() {
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                &emsp;<div className="col-lg-3">
                                                     <div className="mb-3">
                                                         <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Expiry date</label>
                                                         <input type="date(year and month)" className="form-control" placeholder="MM/YY" value={exdate} onChange={e => setExdate(e.target.value)} />
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-2">
                                                     <div className="mb-3">
                                                         <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>CVV Code</label>
                                                         <input type="password" className="form-control" value={cvv} onChange={e => setCvv(e.target.value)} maxLength={4} />
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div className="px-1 col-lg-8 mb-3">
-                                                <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Email</label>
+                                            <div className='row'>
+                                            <div className="px-1 col-lg-5 mb-3">
+                                                <label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Email</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)} />
                                             </div>
-                                            
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color:"rgba(255, 74, 2, 0.816)" }}>Submit</button>
+                                            &emsp; <div className="col-lg-5">
+                                                    <div className="mb-3">
+                                                        <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
+                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                    </div>
+                                                    </div>
+
+                                            </div>
+                                            <div className="px-1 col-lg-9 mb-3">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                            </div>
+
+                                            <br/> <br/>
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color:"white",marginLeft:"10%",background:"rgba(255, 74, 2, 0.816)" }}>Submit</button>
                                             
                                         </form>
                                     </div>
@@ -261,7 +307,7 @@ function Payments() {
                                                 <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Upload Slip</label>
                                                 <input type="file" className="form-control" value={slip} onChange={e => setSlip(e.target.value)} />
                                             </div>
-                                            <button type="submit" className="btn btn-primary"style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>
+                                            <button type="submit" className="btn btn-primary"style={{ width: '600px',color:"white",marginLeft:"10%",background:"rgba(255, 74, 2, 0.816)" }}>
                                                 Submit
                                             </button>
                                         </form>
@@ -336,7 +382,7 @@ function Payments() {
             </div>
             <br>
 
-            </br>
+            </br><br /><br /><br /><br />
             <Footer />
         </div>
     );
