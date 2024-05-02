@@ -303,10 +303,25 @@ function Payments() {
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div className='row'>
                                             <div className="px-2 col-lg-6 mb-3">
                                                 <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Upload Slip</label>
                                                 <input type="file" className="form-control" value={slip} onChange={e => setSlip(e.target.value)} />
                                             </div>
+                                            <div className="col-lg-5">
+                                                    <div className="mb-3">
+                                                        <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
+                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                    </div>
+                                                    </div>
+
+                                            </div>
+                                            <div className="px-1 col-lg-9 mb-3">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                            </div>
+                                            <br>
+                                            </br>
                                             <button type="submit" className="btn btn-primary"style={{ width: '600px',color:"white",marginLeft:"10%",background:"rgba(255, 74, 2, 0.816)" }}>
                                                 Submit
                                             </button>
@@ -351,9 +366,18 @@ function Payments() {
                                                 <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)"}}>Repair Agent Name</label>
                                                 <input type="text" className="form-control" value={rgname} onChange={e => setRgname(e.target.value)} />
                                             </div>
+                                            <div className='row'>
                                             <div className="px-2 col-lg-6 mb-3">
                                                 <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)"}}>Email address</label>
                                                 <input type="email" className="form-control" placeholder="example@gmail.com" value={cemail} onChange={e => setCemail(e.target.value)} />
+                                            </div>
+                                            <div className="col-lg-5">
+                                                    <div className="mb-3">
+                                                        <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
+                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                    </div>
+                                                    </div>
+
                                             </div>
                                             <div className="row">
                                                 <div className="col-lg-6">
@@ -369,7 +393,14 @@ function Payments() {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color: "rgba(255, 74, 2, 0.816)" }}>
+                                            <div className="px-1 col-lg-9 mb-3">
+                                            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                            </div>
+                                            <br>
+                                            </br>
+
+                                            <button type="submit" className="btn btn-primary" style={{ width: '600px',color:"white",marginLeft:"10%",background:"rgba(255, 74, 2, 0.816)" }}>
                                                 Submit
                                             </button>
                                         </form>
