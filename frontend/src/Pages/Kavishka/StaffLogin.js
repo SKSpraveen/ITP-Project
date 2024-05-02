@@ -32,9 +32,9 @@ const StaffLogin2 = () => {
           case "Admin":
             navigate("/Admin");
             break;
-          case "StockManager":
+          case "Stock Manager":
             console.log('Done');
-            navigate("/stock_manager_dashboard");
+            navigate("/smdashboard");
             break;
 
             case "Employee Manager":
@@ -44,6 +44,10 @@ const StaffLogin2 = () => {
             case "Financial Manager":
                   
                   navigate("/Financial_manager_dashboard");
+                  break;
+            case "Payment Manager":
+                  
+                   navigate("/omdashboard");
                   break;
           // Add more cases for other roles as needed
           default:
