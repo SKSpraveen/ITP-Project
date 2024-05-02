@@ -91,13 +91,14 @@ const UserProfile = () => {
   };
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", fontFamily: "Arial, sans-serif" }}>
       <div
         className="sidebar"
         style={{
           backgroundColor: "#242424",
           color: "white",
           width: "250px",
+          height: "100vh",
           padding: "20px",
         }}
       >
@@ -140,49 +141,72 @@ const UserProfile = () => {
           </li>
         </ul>
       </div>
-      <div className="profile-container" style={{ flex: 1, padding: "20px" }}>
+      <div
+        className="profile-container"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          padding: "20px",
+          backgroundColor: "#f4f4f4",
+          height: "100vh",
+        }}
+      >
         <h1 style={{ fontSize: "24px", marginBottom: "20px", color: "#333" }}>
           User Profile
         </h1>
-        <form onSubmit={handleUpdate}>
-          <div className="input-group" style={{ marginBottom: "20px" }}>
-            <label htmlFor="name" style={{ fontWeight: "bold" }}>
+        <form onSubmit={handleUpdate} style={{ width: "100%" }}>
+          <div style={{ marginBottom: "20px", width: "100%" }}>
+            <label
+              htmlFor="name"
+              style={{
+                fontWeight: "bold",
+                marginBottom: "5px",
+                display: "block",
+              }}
+            >
               Name
             </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={newData.name}
-              onChange={handleChange}
-              style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
-              }}
-            />
+            <div style={{ display: "flex" }}>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={newData.name}
+                onChange={handleChange}
+                style={{
+                  width: "50%",
+                  padding: "10px",
+                  border: "1px solid #ccc",
+                  borderRadius: "5px",
+                  marginRight: "10px",
+                }}
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={newData.email}
+                readOnly
+                style={{
+                  width: "50%",
+                  padding: "10px",
+                  border: "1px solid #ccc",
+                  borderRadius: "5px",
+                }}
+              />
+            </div>
           </div>
-          <div className="input-group" style={{ marginBottom: "20px" }}>
-            <label htmlFor="email" style={{ fontWeight: "bold" }}>
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={newData.email}
-              readOnly
+          <div style={{ marginBottom: "20px", width: "100%" }}>
+            <label
+              htmlFor="address"
               style={{
-                width: "100%",
-                padding: "10px",
-                border: "1px solid #ccc",
-                borderRadius: "5px",
+                fontWeight: "bold",
+                marginBottom: "5px",
+                display: "block",
               }}
-            />
-          </div>
-          <div className="input-group" style={{ marginBottom: "20px" }}>
-            <label htmlFor="address" style={{ fontWeight: "bold" }}>
+            >
               Address
             </label>
             <input
@@ -199,8 +223,15 @@ const UserProfile = () => {
               }}
             />
           </div>
-          <div className="input-group" style={{ marginBottom: "20px" }}>
-            <label htmlFor="phoneNumber" style={{ fontWeight: "bold" }}>
+          <div style={{ marginBottom: "20px", width: "100%" }}>
+            <label
+              htmlFor="phoneNumber"
+              style={{
+                fontWeight: "bold",
+                marginBottom: "5px",
+                display: "block",
+              }}
+            >
               Phone Number
             </label>
             <input
@@ -217,10 +248,11 @@ const UserProfile = () => {
               }}
             />
           </div>
-          <div className="button-group" style={{ textAlign: "right" }}>
+          <div style={{ textAlign: "right", width: "100%" }}>
             <button
               type="submit"
               className="update-button"
+              onClick={handleUpdate}
               style={{
                 padding: "10px 20px",
                 backgroundColor: "#4caf50",
@@ -253,4 +285,5 @@ const UserProfile = () => {
     </div>
   );
 };
+
 export default UserProfile;
