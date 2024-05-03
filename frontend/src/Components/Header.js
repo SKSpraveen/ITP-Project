@@ -22,7 +22,13 @@ function Header() {
     };
 
     useEffect(() => {
-        fetchCartItemCount();
+        fetchCartItemCount(); // Fetch cart item count initially
+
+        // Fetch cart item count every 30 seconds
+        const intervalId = setInterval(fetchCartItemCount, 30000);
+
+        // Clear interval on component unmount
+        return () => clearInterval(intervalId);
     }, []);
 
     return (
@@ -45,9 +51,10 @@ function Header() {
                     backgroundColor: "#E9E9E9",
                     borderRadius: "3px",
                     border: "none",
+                    width:"8%"
                 }}
             >
-                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/signup")} style={{ fontSize: "17px", color: "black", fontWeight: "550" }}>
+                <i className="fa fa-user-o" aria-hidden="true"  onClick={() => navigate("/signup")} style={{ fontSize: "17px", color: "black", fontWeight: "600" }}>
                     {" "}
                     My Account
                 </i>
@@ -75,7 +82,7 @@ function Header() {
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul className="navbar-nav" style={{ marginLeft: "13%" }}>
+                        <ul className="navbar-nav" style={{ marginLeft: "10%" }}>
                             <li className="nav-item">
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
@@ -85,7 +92,7 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item dropdown" style={{ marginLeft: "18%" }}>
+                            <li className="nav-item dropdown" style={{ marginLeft: "23%" }}>
                                 <a className="nav-link_H dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Instollation
                                 </a>
@@ -113,7 +120,7 @@ function Header() {
                                 </ul>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "18%" }}>
+                            <li className="nav-item" style={{ marginLeft: "23%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/repair")}>
                                     <a className="nav-link_H" href="#">
                                         Repairing
@@ -121,7 +128,7 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "18%" }}>
+                            <li className="nav-item" style={{ marginLeft: "23%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
                                     <a className="nav-link_H" href="#">
@@ -130,7 +137,7 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "18%" }}>
+                            <li className="nav-item" style={{ marginLeft: "23%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
                                     <a className="nav-link_H" href="#">
@@ -139,13 +146,17 @@ function Header() {
                                 </button>
                             </li>
 
-                            <li className="nav-item" style={{ marginLeft: "18%", position: "relative" }}>
+                            <li className="nav-item" style={{ marginLeft: "23%", position: "relative" }}>
     <button className="nav-btn" onClick={() => navigate("/Cart_View")}>
-        {" "}
-        <a className="nav-link_H" href="#">
-            <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-            <span className="badge bg-danger" style={{ position: "absolute", top: "-9px", right: "-30px"}}>{cartItemCount}</span>
-        </a>
+    {" "}
+                                    <a className="nav-link_H" href="#">
+                                        <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                                        {cartItemCount > 0 && (
+                                            <span className="badge bg-danger" style={{ position: "absolute", top: "-9px", right: "-30px" }}>
+                                                {cartItemCount}
+                                            </span>
+                                        )}
+                                    </a>
     </button>
 </li>
 
