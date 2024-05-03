@@ -7,7 +7,19 @@ const cardSchema = new Schema({
     cvv: String,
     email: String,
     exdate: String,
-    amount:String,
+    product:{
+        type: String,
+        required:true
+    },
+    orderQuantity:{
+        type:Number,
+        required:true
+    },
+    amount:{
+        type:Number,
+        required:true
+    },
+
     createdAt: { type: Date, default: Date.now }
    
 });
@@ -18,15 +30,37 @@ const directpaymentSchema = new Schema ({
    rgname: String,
    cemail: String,
    contactnumber: String,
-   amount: String, 
+   product:{
+    type: String,
+    required:true
+},
+orderQuantity:{
+    type:Number,
+    required:true
+},
+amount:{
+    type:Number,
+    required:true
+},
    createdAt: { type: Date, default: Date.now }
 });
 
 const bankpaymentSchema = new Schema ({
     email: String,
     accountnumber: String,
-    amount: String,
     slip: String,
+    product:{
+        type: String,
+        required:true
+    },
+    orderQuantity:{
+        type:Number,
+        required:true
+    },
+    amount:{
+        type:Number,
+        required:true
+    },
     createdAt: { type: Date, default: Date.now }
     
  });

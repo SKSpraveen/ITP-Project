@@ -14,7 +14,7 @@ const getcards = (req, res) => {
 
 
 const addcards = (req, res) => {
-    const { card, cname, exdate, cvv, email,amount } = req.body;
+    const { card, cname, exdate, cvv, email,amount,product,orderQuantity } = req.body;
     const newCard = new Card({
         card,
         cname,
@@ -22,6 +22,8 @@ const addcards = (req, res) => {
         email,
         exdate,
         amount,
+        product,
+        orderQuantity
     });
 
     newCard.save()
@@ -74,7 +76,7 @@ const getdpayment = (req, res) => {
 };
 
 const adddpayment = (req, res) => {
-    const { name, rgname, cemail, contactnumber, amount } = req.body;
+    const { name, rgname, cemail, contactnumber, amount,product,orderQuantity } = req.body;
     
     
     const newDpayment = new dpayment({
@@ -83,6 +85,8 @@ const adddpayment = (req, res) => {
         cemail,
         contactnumber,
         amount,
+        product,
+        orderQuantity
     });
 
     
@@ -133,12 +137,14 @@ const getbpayment = (req, res) => {
 };
 
 const addbpayment = (req, res) => {
-    const { email, accountnumber, amount, slip } = req.body;
+    const { email, accountnumber, amount, slip,product,orderQuantity } = req.body;
     const newbpayment = new bpayment({
         email,
         accountnumber,
         amount,
         slip,
+        product,
+        orderQuantity
        
     });
 
