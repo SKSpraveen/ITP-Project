@@ -13,7 +13,7 @@ function AdminPanel() {
 
     useEffect(() => {
         if (user) {
-            Axios.get(`http://localhost:8070/api/auth/profile`, {
+            Axios.get(`http://localhost:8070/api/auth/staff`, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`,
                 },
@@ -111,7 +111,8 @@ function AdminPanel() {
                     <tr style={{ textAlign: "center" }}>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Address</th>
+                        <th scope="col">Role</th>
+
                         <th scope="col">Contact Number</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -121,7 +122,7 @@ function AdminPanel() {
                         <tr key={index}>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.address}</td>
+                            <td>{user.role}</td>
                             <td>{user.phoneNumber}</td>
                             <td>
                                 <button 
@@ -131,7 +132,7 @@ function AdminPanel() {
                                         background: "red",
                                         borderRadius: "50px",
                                         width: "90px",
-                                        marginLeft: "40px",
+                                        marginLeft: "100px",
                                     }}
                                 >
                                     Delete
