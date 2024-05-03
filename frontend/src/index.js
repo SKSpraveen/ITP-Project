@@ -92,11 +92,7 @@ ReactDOM.render(
 
         
 
-        <Route path="/Payments" element={<Payments />} />
-      <Route path="/NumberPageForm" element={<NumberPageForm />} />
-      <Route path="/DirectPageForm" element={<DirectPageForm />} />
-      <Route path="/BankPageForm" element={<BankPageForm/>} />
-
+        
 
         <Route path='/' element={<App />}/>
         <Route path='/exform' element={<Expence />}/>
@@ -116,6 +112,13 @@ ReactDOM.render(
         <Route path='/userDetails' element={<AdminDash/>}/>
         <Route path='/staff' element={<StaffSignup/>}/>
         <Route path='/stafflogin' element={<StaffLogin/>}/>
+
+        <Route path='/' element={<App />} />
+        <Route path="/Payments" element={<Payments />} />
+      <Route path="/NumberPageForm" element={<NumberPageForm />} />
+      <Route path="/DirectPageForm" element={<DirectPageForm />} />
+      <Route path="/BankPageForm" element={<BankPageForm/>} />
+
         
       </Routes>
       </AuthContextProvider>
