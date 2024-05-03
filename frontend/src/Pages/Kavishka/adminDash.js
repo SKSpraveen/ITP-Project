@@ -26,25 +26,25 @@ function AdminPanel() {
         }
     }, [user]);
 
-   const handleDelete = async (userId) => {
-    try {
-      await Axios.delete(
-        `http://localhost:8070/api/auth/delete/${userId}`,
-        {
-          headers: {
-            Authorization: `Bearer ${user.token}`,
-          },
+    const handleDelete = async (email) => {
+        try {
+            await Axios.delete(
+                `http://localhost:8070/api/auth/delete/${user.email}`,
+                {
+                    headers: {
+                        Authorization: `Bearer ${user.token}`,
+                    },
+                }
+            );
+            // Remove the deleted user from the dataList
+            setDataList(dataList.filter(u => u.email !== email));
+            alert("User deleted successfully.");
+        } catch (error) {
+            console.error("Error deleting user:", error);
+            alert("Failed to delete user. Please try again.");
         }
-      );
-      // Remove the deleted user from the dataList
-      setDataList(dataList.filter(user => user._id !== userId));
-      alert("User deleted successfully.");
-    } catch (error) {
-      console.error("Error deleting user:", error);
-      alert("Failed to delete user. Please try again.");
-    }
-  };
-
+    };
+    
   const generatePDF = () => {
     const doc = new jsPDF();
     doc.autoTable({ html: '#user-table' });
@@ -124,18 +124,19 @@ function AdminPanel() {
                             <td>{user.address}</td>
                             <td>{user.phoneNumber}</td>
                             <td>
-                                <button 
-                                    onClick={() => handleDelete(user._id)} // Pass user ID to handleDelete function
-                                    className="delete-btn" 
-                                    style={{
-                                        background: "red",
-                                        borderRadius: "50px",
-                                        width: "90px",
-                                        marginLeft: "40px",
-                                    }}
-                                >
-                                    Delete
-                                </button>
+                <button 
+                    onClick= {handleDelete} // Pass user ID to handleDelete function
+                    className="delete-btn" 
+                    style={{
+                       background: "red",
+                       borderRadius: "50px",
+                       width: "90px",
+                       marginLeft: "40px",
+                        }}
+                    >
+                      Delete
+                </button>
+
                             </td>
                         </tr>
                     ))}
