@@ -21,7 +21,6 @@ import Inventory from './Pages/Sasindu/Inventory';
 
 //anjana
 import NumberPageForm from './Pages/Anjana/NumberPageForm';
-import reportWebVitals from './Pages/Anjana/reportWebVitals';
 import DirectPageForm from './Pages/Anjana/DirectPageForm';
 import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
