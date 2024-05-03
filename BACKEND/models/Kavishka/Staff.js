@@ -67,7 +67,7 @@ StaffSchema.statics.login = async function (email, password) {
     throw new Error("Incorrect Email");
   }
 
-  const match = await bcrypt.compare(password, user.password);
+  const match = await bcrypt.compare(password, staff.password);
 
   if (!match) {
     throw new Error('Incorrect password');
