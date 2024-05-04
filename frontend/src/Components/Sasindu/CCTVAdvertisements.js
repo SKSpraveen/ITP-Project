@@ -53,7 +53,7 @@ function CCTVAdvertisements() {
                             {ad.discount > 0 && <s>{`Rs: ${ad.price}`}</s>}
                             &ensp; &ensp;Rs: {ad.price - (ad.price * ad.discount / 100)}
                         </p>
-                        <p>Availability: {ad.availability}</p>
+                        <p  style={{color:"#000000e2",fontWeight:"bold",margin:"auto",fontSize:"20px",background:"rgb(245, 77, 10)",width:"40%",borderRadius:"15px 0 15px 0"}}>{ad.availability}</p>
                         <button type="button" onClick={() => navigate(`/view/${ad._id}`)} className="btn1"> View</button>
                     </div>
                 ))}
