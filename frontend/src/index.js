@@ -54,7 +54,7 @@ import StaffSignup from './Pages/Kavishka/StaffSignup.js'
 import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
-import Manager from './Pages/Kavishka/manegars.js'
+import Manegars from './Pages/Kavishka/manegars.js'
 
 
 
@@ -112,6 +112,7 @@ ReactDOM.render(
         <Route path='/userDetails' element={<AdminDash/>}/>
         <Route path='/staff' element={<StaffSignup/>}/>
         <Route path='/stafflogin' element={<StaffLogin/>}/>
+        <Route path='/manager' element={<Manegars/>}/>
         
       </Routes>
       </AuthContextProvider>
