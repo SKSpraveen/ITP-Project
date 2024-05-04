@@ -140,7 +140,7 @@ function CombinedDetails() {
     return (
         <div>
             <br />
-            <div className="containerSM" style={{ width: "100%" }}>
+            <div className="containerSM" style={{ width: "87%" }}>
                 <h1 style={{ fontSize: "28px", marginLeft: "1%" }}><i>Selling Price</i></h1>
             </div>  
             <div className="row">
@@ -150,7 +150,7 @@ function CombinedDetails() {
                 </div>
             </div>
             <br />
-            <button className="pdf-btnSM" style={{marginLeft:"86%"}} onClick={generatePDF}> <i class="fa fa-download" aria-hidden="true"></i> Export to PDF</button>
+            <button className="pdf-btnSM" style={{marginLeft:"85%"}} onClick={generatePDF}> <i class="fa fa-download" aria-hidden="true"></i> Export to PDF</button>
             <br /> <br />
             <table className="ads-table table table-hover">
                 <thead>
