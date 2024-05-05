@@ -79,7 +79,7 @@ function AddAdvertisement(){
 
     return(
 
-        <div className="bottom">
+        <div className="body1">
             
                 <br /><br />
                 <button type="button" onClick={()=> navigate('/viewAllAds')} class="viewAllBtn"><i class="fa fa-eye" aria-hidden="true"></i> View All</button>
@@ -92,7 +92,7 @@ function AddAdvertisement(){
                     <form onSubmit={sendData} className="row g-3">
                     <div className="col-10">
                         <br /><br />
-                        <label for="inputType" className="form-label">Type</label>
+                        <label for="inputType" className="form-label1">Type</label>
                         <select id="type" value={type} onChange={(e)=>{setType(e.target.value);}} className="form-select">
                         <option>None</option>
                         <option>CCTV</option>
@@ -105,44 +105,44 @@ function AddAdvertisement(){
                         </div>
                     </div>
                     <div className="col-10">
-                        <label for="inputItem" className="form-label">Item</label>
+                        <label for="inputItem" className="form-label1">Item</label>
                         <input type="text" className="form-control" id="item" value={item} onChange={(e)=>{setItem(e.target.value);}} />
                         <div className="err">
                             {errors.item && <p className="error-message">{errors.item}</p>}
                         </div>
                     </div>
                     <div className="col-10">
-                        <label for="inputDescription" className="form-label">Description</label>
+                        <label for="inputDescription" className="form-label1">Description</label>
                         <input type="text" className="form-control" id="description" value={description} onChange={(e)=>{setDescription(e.target.value);}}/>
                         <div className="err">
                             {errors.description && <p className="error-message">{errors.description}</p>}
                         </div>    
                     </div>
                     <div className="col-10">
-                        <label for="inputPhoto" className="form-label">Image</label>
+                        <label for="inputPhoto" className="form-label1">Image</label>
                         <input type="text" className="form-control" id="photo" value={photo} onChange={(e)=>{setPhoto(e.target.value);}}/>
                         <div className="err">
                         {errors.photo && <p className="error-message">{errors.photo}</p>}
                         </div>
                     </div>
                     <div className="col-md-5" style={{marginLeft:"4%"}}>
-                        <label for="inputDiscount" className="form-label">Discount</label>
+                        <label for="inputDiscount" className="form-label1">Discount</label>
                         <input type="text" className="form-control" id="discount" value={discount} onChange={(e)=>{setDiscount(e.target.value);}}/>
                     </div>
                     <div className="col-md-5">
-                        <label for="inputOldPrice" className="form-label">Price</label>
+                        <label for="inputOldPrice" className="form-label1">Price</label>
                         <input type="text" className="form-control" id="price" value={price} onChange={(e)=>{setPrice(e.target.value);}} placeholder=" Rs :"/>
                         <div className="err">
                         </div>
                     </div>
                     <div className="col-10">
-                        <label for="inputAvailability" className="form-label">Availability</label>
+                        <label for="inputAvailability" className="form-label1">Availability</label>
                         <input type="text" className="form-control" id="availability" value={availability} onChange={(e)=>{setAvailability(e.target.value);}}/>
                     </div>
                 
                     <div className="col-6">
                         <br /> 
-                        <button type="submit"  className="btn btn-primary">Post</button>
+                        <button type="submit"  className="btn btn-primary1">Post</button>
                     </div>
                     </form>
                     <br />

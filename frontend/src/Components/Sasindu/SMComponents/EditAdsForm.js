@@ -79,32 +79,32 @@ function EditAdsForm() {
                 <form className="row g-3" onSubmit={handleSubmit}>
                 <div className="col-10">
                     <br /><br />
-                    <label for="inputItem" className="form-label">Item</label>
+                    <label for="inputItem" className="form-label1">Item</label>
                     <input type="text" className="form-control" id="item"  value={formData.item} onChange={handleChange}/>
                 </div>
                 <div className="col-10">
-                    <label for="inputDescription" className="form-label">Description</label>
+                    <label for="inputDescription" className="form-label1">Description</label>
                     <input type="text" className="form-control" id="description" value={formData.description} onChange={handleChange}/>
                 </div>
                 <div className="col-10">
-                    <label for="inputPhoto" className="form-label">Image</label>
+                    <label for="inputPhoto" className="form-label1">Image</label>
                     <input type="text" className="form-control" id="photo" value={formData.photo} onChange={handleChange}/>
                 </div>
                 <div className="col-md-5" style={{marginLeft:"4%"}}>
-                    <label for="inputDiscount" className="form-label">Discount</label>
+                    <label for="inputDiscount" className="form-label1">Discount</label>
                     <input type="text" className="form-control" id="discount" value={formData.discount} onChange={handleChange}/>
                 </div>
                 <div className="col-10">
-                    <label for="inputNewPrice" className="form-label">Price</label>
+                    <label for="inputNewPrice" className="form-label1">Price</label>
                     <input type="text" className="form-control" id="price" value={formData.price} onChange={handleChange}/>
                 </div>
                 <div className="col-10">
-                    <label for="inputAvailability" className="form-label">Availability</label>
+                    <label for="inputAvailability" className="form-label1">Availability</label>
                     <input type="text" className="form-control" id="availability" value={formData.availability} onChange={handleChange}/>
                 </div>
                 <div className="col-6">
                     <br />
-                    <button type="submit"  className="btn btn-primary">Update</button>
+                    <button type="submit"  className="btn btn-primary1">Update</button>
                 </div>
                 </form>
                 <br />

@@ -55,6 +55,7 @@ import StaffSignup from './Pages/Kavishka/StaffSignup.js'
 import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
+import Manegars from './Pages/Kavishka/manegars.js'
 
 
 
@@ -112,6 +113,7 @@ ReactDOM.render(
         <Route path='/userDetails' element={<AdminDash/>}/>
         <Route path='/staff' element={<StaffSignup/>}/>
         <Route path='/stafflogin' element={<StaffLogin/>}/>
+<<<<<<< HEAD
 
         <Route path='/' element={<App />} />
         <Route path="/Payments" element={<Payments />} />
@@ -120,6 +122,9 @@ ReactDOM.render(
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
 
+=======
+        <Route path='/manager' element={<Manegars/>}/>
+>>>>>>> c14e6894c2e5c554ba168c39a001b63585277c58
         
       </Routes>
       </AuthContextProvider>

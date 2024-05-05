@@ -5,6 +5,7 @@ import "../../.././Pages/Sasindu/StockManager.css";
 function InventoryTable() {
     const [inventoryData, setInventoryData] = useState([]);
     const [dataList, setDataList] = useState([]);
+    const [cartData, setCartData] = useState([]);
 
     const fetchData = async () => {
         try {
@@ -52,6 +53,26 @@ function InventoryTable() {
         }
     };
 
+    // Function to fetch cart data
+    const fetchCartData = async () => {
+        try {
+            const response = await axios.get("http://localhost:8070/cart");
+            if (response.data.success) {
+                setCartData(response.data.cart);
+                alert("Cart data fetched successfully");
+            } else {
+                alert("Failed to fetch cart data");
+            }
+        } catch (error) {
+            console.error("Error fetching cart data:", error);
+            alert("Failed to fetch cart data");
+        }
+    };
+
+    useEffect(() => {
+        fetchCartData();
+    }, []);
+
     return (
         <div>
             <div className="row">
@@ -76,18 +97,50 @@ function InventoryTable() {
                     </tr>
                 </thead>
                 <tbody>
-                    {(dataList.length ? dataList : inventoryData).map((item, index) => (
+                    {(dataList.length ? dataList : inventoryData).map((item, index) => {
+                        // Calculate remaining quantity by subtracting total quantity in cart from initial quantity
+                        const totalQuantityInCart = cartData.reduce((acc, cartItem) => {
+                            if (cartItem.product === item.product) {
+                                return acc + cartItem.orderQuantity;
+                            }
+                            return acc;
+                        }, 0);
+                        const remainingQuantity = item.quantity - totalQuantityInCart;
+                        
+                        return (
+                            <tr key={index}>
+                                <td>{item.productCode}</td>
+                                <td>{item.product}</td>
+                                <td>{item.quantity}</td>
+                                <td>
+                                    {remainingQuantity < 5 ? (
+                                        <span style={{ color: "red",fontWeight:"bold" }}>Low Stock: {remainingQuantity}</span>
+                                    ) : (
+                                        remainingQuantity
+                                    )}
+                                </td>
+                            </tr>
+                        );
+                    })}
+                </tbody>
+            </table>
+            <br /><br /><br /><br />
+            <div className="containerSM">
+                    <h1 style={{fontSize:"28px",marginLeft:"42%"}}><i>Order details</i></h1>
+                </div>
+                <br /><br /><br />
+            <table className="ads-table table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Order Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cartData.map((item, index) => (
                         <tr key={index}>
-                            <td>{item.productCode}</td>
                             <td>{item.product}</td>
-                            <td>{item.quantity}</td>
-                            <td>
-                                {item.quantity < 5 ? (
-                                    <span style={{ color: "red" }}>Low Stock: {item.quantity}</span>
-                                ) : (
-                                    item.quantity
-                                )}
-                            </td>
+                            <td>{item.orderQuantity}</td>
                         </tr>
                     ))}
                 </tbody>

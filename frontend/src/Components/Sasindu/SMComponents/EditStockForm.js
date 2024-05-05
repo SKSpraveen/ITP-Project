@@ -115,12 +115,12 @@ function EditStockForm() {
 
                             <div className="col-md-5" style={{marginLeft:"4%"}}>
                                 <br /><br />
-                                <label for="inputProductCode" className="form-label">&ensp;Product Code</label>
+                                <label for="inputProductCode" className="form-label1">&ensp;Product Code</label>
                                 <input type="text"   className="form-control" id="productCode" value={formData.productCode} onChange={handleChange} />
                             </div>
                     &emsp;<div className="col-md-5">
                                 <br /><br />
-                                <label for="inputProductCategory" className="form-label">&ensp;Product Category</label>
+                                <label for="inputProductCategory" className="form-label1">&ensp;Product Category</label>
                                 <select id="productCategory" className="form-select" value={formData.productCategory} onChange={handleChange}>
                                 <option>Select Category</option>
                                 <option>CCTV</option>
@@ -131,37 +131,37 @@ function EditStockForm() {
                                 <br />
                             </div>
                             <div className="col-md-5" style={{marginLeft:"4%"}}>
-                                <label for="inputProduct" className="form-label">&ensp;Product</label>
+                                <label for="inputProduct" className="form-label1">&ensp;Product</label>
                                 <input type="text" className="form-control" id="product" value={formData.product} onChange={handleChange} />
                             </div>
                     &emsp;<div className="col-md-5">
-                                <label for="inputSupplyCompany" className="form-label">&ensp;Supply Company</label>
+                                <label for="inputSupplyCompany" className="form-label1">&ensp;Supply Company</label>
                                 <input type="text" className="form-control" id="supplyCompany" value={formData.supplyCompany} onChange={handleChange} />
                                 <br />
                             </div>
                             <br /><br />
                             <div className="col-10" style={{marginLeft:"1%"}}>
-                                <label for="inputDescription" className="form-label">Description</label>
+                                <label for="inputDescription" className="form-label1">Description</label>
                                 <input type="text" className="form-control" id="description" value={formData.description} onChange={handleChange} />
                                 <br />
                             </div>
                             <br /><br />
                             <div className="col-md-3" style={{marginLeft:"11%"}}>
-                                <label for="inputDateReceived" className="form-label">&ensp;Date Received</label>
+                                <label for="inputDateReceived" className="form-label1">&ensp;Date Received</label>
                                 <input type="date" className="form-control" id="dateReceived" value={formData.dateReceived} onChange={handleChange} />
                             </div>
                             <br />
                             <div className="col-md-3">
-                                <label for="inputQuantity" className="form-label">&ensp;Quantity</label>
+                                <label for="inputQuantity" className="form-label1">&ensp;Quantity</label>
                                 <input type="text" className="form-control" id="quantity" value={formData.quantity} onChange={handleChange} />
                             </div>
                             <div className="col-md-3">
-                                <label for="inputUnitPrice" className="form-label">&ensp;Unit Price</label>
+                                <label for="inputUnitPrice" className="form-label1">&ensp;Unit Price</label>
                                 <input type="text" className="form-control" id="unitPrice" placeholder=" Rs :" value={formData.unitPrice} onChange={handleChange} />
                             </div>
                             <div className="col-6">
                                 <br /> 
-                            <button type="submit"  className="btn btn-primary">Update</button>
+                            <button type="submit"  className="btn btn-primary1">Update</button>
                         </div>
                 </form>
                 <br />

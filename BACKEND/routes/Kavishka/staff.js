@@ -48,7 +48,7 @@ router.route("/profile/:email").get(async (req, res) => {
     }
   });
 
-  router.route("/delete/:email").delete(async (req, res) => {
+  router.route("/staff/:email").delete(async (req, res) => {
     try {
         const { email } = req.params;
 
@@ -57,13 +57,16 @@ router.route("/profile/:email").get(async (req, res) => {
         if (!deletedUser) {
             return res.status(404).json({ message: "User not found" });
         }
-  
+
         return res.status(200).json({ message: "User deleted successfully" });
     } catch (error) {
         console.log(error.message);
         return res.status(500).json({ message: error.message });
     }
 });
+
+
+
 
 router.route("/staff").get(async (req, res) => {
     try {
