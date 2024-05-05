@@ -91,7 +91,7 @@ const UserProfile = () => {
   };
 
   return (
-    <div style={{ display: "flex", fontFamily: "Arial, sans-serif" }}>
+    <div style={{background:"linear-gradient(to bottom, #ffc490, #f3f5ff)", display: "flex", fontFamily: "Arial, sans-serif" }}>
       <div
         className="sidebar"
         style={{
@@ -103,47 +103,37 @@ const UserProfile = () => {
         }}
       >
         <ul className="menu" style={{ listStyleType: "none", padding: 0 }}>
-        
-        <div  style={{background:"black",borderRadius:"20px 0px 20px 0px",height:"50px",paddingTop:"9px",fontWeight:"bold"}}>
-        <li style={{ marginBottom: "10px", fontSize: "25px" ,color: "white", textDecoration: "none",marginLeft:"20%" }}>
-           
+          <div  style={{background:"black",borderRadius:"20px 0px 20px 0px",height:"50px",paddingTop:"9px",fontWeight:"bold"}}>
+            <li style={{ marginBottom: "10px", fontSize: "25px" ,color: "white", textDecoration: "none",marginLeft:"20%" }}>
               USER PANEL
-            
-          </li>
-           
+            </li>
           </div>
-          
           <br/>
           <br/>
-
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <a href="#" style={{ color: "white", textDecoration: "none",marginLeft:"20%" }}>
+            <button type="button" style={{border:"none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft:"20%" }}>
               Feedback
-            </a>
+            </button>
           </li>
           <br/>
-
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <a href="#" style={{ color: "white", textDecoration: "none",marginLeft:"20%" }}>
+            <button type="button" style={{ border:"none",backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft:"20%" }}>
               Complain
-            </a>
+            </button>
           </li>
           <br/>
-
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <a href="#" style={{ color: "white", textDecoration: "none" ,marginLeft:"20%"}}>
+            <button type="button" style={{ border:"none",backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft:"20%" }}>
               My Orders
-            </a>
+            </button>
           </li>
           <br/>
-
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <a href="#" style={{ color: "white", textDecoration: "none" ,marginLeft:"20%"}}>
+            <button type="button" style={{ border:"none",backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft:"20%" }}>
               My Services
-            </a>
+            </button>
           </li>
           <br/>
-
           <li>
             <button
               className="logout-button"
@@ -165,51 +155,47 @@ const UserProfile = () => {
           </li>
         </ul>
       </div>
-<div className="admin-container" style={{ flex: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: "0 0 30px rgba(32, 32, 32, 0.5)" }}>
+      <div className="admin-container" style={{ flex: '1', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: "0 0 30px rgba(32, 32, 32, 0.5)" }}>
         <header className="admin-header" style={{ backgroundColor: 'rgba(255, 74, 2, 0.816)', display: 'flex', color: 'black', padding: '20px', alignItems: 'center', width: "calc(100% - 0px)" }}>
           <h1 style={{ color: 'black',margin:"auto",fontWeight:"600" }}> User Profile</h1>
         </header>
-
         <div className="profile-container" style={{ padding: "20px", backgroundColor: "#f4f4f4", marginTop: "80px", width: "50%" }}>
-          
           <form onSubmit={handleUpdate} style={{ width: "100%" }}>
             <div style={{ marginBottom: "20px", width: "100%" }}>
               <label htmlFor="name" style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
                 Name
               </label>
-      
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={newData.name}
-                  onChange={handleChange}
-                  style={{
-                    width: "100%",
-                    padding: "10px",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                    marginRight: "10px",
-                  }}
-                />
-                <label htmlFor="name" style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={newData.name}
+                onChange={handleChange}
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "1px solid #ccc",
+                  borderRadius: "5px",
+                  marginRight: "10px",
+                }}
+              />
+              <label htmlFor="name" style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
                 Email
               </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={newData.email}
-                  readOnly
-                  style={{
-                    width: "100%",
-                    padding: "10px",
-                    border: "1px solid #ccc",
-                    borderRadius: "5px",
-                  }}
-                />
-              </div>
-            
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={newData.email}
+                readOnly
+                style={{
+                  width: "100%",
+                  padding: "10px",
+                  border: "1px solid #ccc",
+                  borderRadius: "5px",
+                }}
+              />
+            </div>
             <div style={{ marginBottom: "20px", width: "100%" }}>
               <label htmlFor="address" style={{ fontWeight: "bold", marginBottom: "5px", display: "block" }}>
                 Address

@@ -29,7 +29,7 @@ function AdminPanel() {
        const handleDelete = async (email) => {
         try {
             await Axios.delete(
-                `http://localhost:8070/api/auth/delete/${email}`,
+                `http://localhost:8070/api/auth/Staff/${email}`,
                 {
                     headers: {
                         Authorization: `Bearer ${user.token}`,
