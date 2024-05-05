@@ -50,9 +50,9 @@ StaffSchema.statics.signup = async function (name, email, role, phoneNumber, pas
   const salt = await bcrypt.genSalt(10);
   const hash = await bcrypt.hash(password, salt);
 
-  const user = await this.create({ name, email, role, phoneNumber, password: hash });
+  const staff = await this.create({ name, email, role, phoneNumber, password: hash });
 
-  return user;
+  return staff;
 };
 
 // static login method
@@ -67,7 +67,7 @@ StaffSchema.statics.login = async function (email, password) {
     throw new Error("Incorrect Email");
   }
 
-  const match = await bcrypt.compare(password, user.password);
+  const match = await bcrypt.compare(password, staff.password);
 
   if (!match) {
     throw new Error('Incorrect password');

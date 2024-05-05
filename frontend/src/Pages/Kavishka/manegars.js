@@ -13,7 +13,7 @@ function AdminPanel() {
 
     useEffect(() => {
         if (user) {
-            Axios.get(`http://localhost:8070/api/auth/profile`, {
+            Axios.get(`http://localhost:8070/api/auth/staff`, {
                 headers: {
                     "Authorization": `Bearer ${user.token}`,
                 },
@@ -26,7 +26,7 @@ function AdminPanel() {
         }
     }, [user]);
 
-    const handleDelete = async (email) => {
+       const handleDelete = async (email) => {
         try {
             await Axios.delete(
                 `http://localhost:8070/api/auth/delete/${email}`,
@@ -44,7 +44,7 @@ function AdminPanel() {
             alert("Failed to delete user. Please try again.");
         }
     };
-    
+
     const generatePDF = () => {
         const doc = new jsPDF();
         doc.autoTable({ html: '#user-table' });
@@ -97,24 +97,9 @@ function AdminPanel() {
                         style={{width:"300px",marginLeft:"150px" ,marginTop:"20px"}}
                     />
                 </div>
-                <div className="col-lg-3 mt-2 mb-2" style={{ textAlign: 'center' }}>
-    <p style={{
-        marginTop:"40px",
-        border: 'none',
-        color: 'black',
-        padding: '10px 15px',
-        textDecoration: 'none',
-        fontSize: '16px',
-        borderRadius: '10px',
-        cursor: 'pointer',
-        width:"200px",
-        fontWeight:"bold"
-    }}>
-        Available Users: {dataList.length}
-    </p>
-</div>
-
-               
+                <div className="col-lg-3 mt-2 mb-2">
+                    <button onClick={generatePDF} style={{ height: "50px", width: "200px", background: "green", marginTop: "20px", textAlign: "center" }} className="btn btn-primary">Generate PDF</button>
+                </div>
             </div>
             <br />
             <table id="user-table" className="ads-table table table-hover">
@@ -122,7 +107,7 @@ function AdminPanel() {
                     <tr style={{ textAlign: "center" }}>
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Address</th>
+                        <th scope="col">Role</th>
                         <th scope="col">Contact Number</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -132,7 +117,7 @@ function AdminPanel() {
                         <tr key={index}>
                             <td>{user.name}</td>
                             <td>{user.email}</td>
-                            <td>{user.address}</td>
+                            <td>{user.role}</td>
                             <td>{user.phoneNumber}</td>
                             <td>
                                 <button 
@@ -142,7 +127,7 @@ function AdminPanel() {
                                         background: "red",
                                         borderRadius: "50px",
                                         width: "90px",
-                                        marginLeft: "40px",
+                                        marginLeft: "100px",
                                     }}
                                 >
                                     Delete
@@ -152,9 +137,6 @@ function AdminPanel() {
                     ))}
                 </tbody>
             </table>
-            <div className="col-lg-3 mt-2 mb-2">
-                    <button onClick={generatePDF} style={{ height: "50px", width: "200px", background: "green", marginTop: "20px", textAlign: "center",  marginLeft:"315%" }} className="btn btn-primary">Generate PDF</button>
-                </div>
             <br /><br />
         </div>
     );
