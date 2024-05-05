@@ -55,7 +55,7 @@ const user =require('./routes/Kavishka/user')
 app.use("/api/auth",user);
 
 const staff =require('./routes/Kavishka/staff')
-app.use("/auth",staff);
+app.use("/api/auth",staff);
 
 const staffRoute =require('./routes/Kavishka/staffRoute')
-app.use("/staff", staffRoute);
+app.use("/api/auth", staffRoute);
