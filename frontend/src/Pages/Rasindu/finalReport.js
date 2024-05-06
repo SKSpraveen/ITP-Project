@@ -81,7 +81,7 @@ function FinalReport() {
       </div>
       <br />
       <br />
-      <div className="container" id='report'>
+      <div className="container" id='report' style={{backgroundColor:" #fff"}}>
         <p className='rReportp'>Protons E&E</p>
         <p className='rReportp'>+94 774015896</p>
         <p className='rReportp'>protons@gmail.com</p>

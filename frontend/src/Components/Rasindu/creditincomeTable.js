@@ -14,7 +14,7 @@ function creditincomeTabale({ rows }){
 
     
     return(
-        <div>
+        <div >
             <div className="rtable-possition">
             <table className="rtable-fill">
             <thead>
@@ -40,19 +40,16 @@ function creditincomeTabale({ rows }){
                                 <td colSpan="5" className="text-center">No Data found</td>
                             </tr>
                         )}
-                        {/* Display total */}
-                        <tr>
-                            <td colSpan="4" className="text-right">Total Credit Incomes(Rs):</td>
-                            <td className="rtdTable">{calculateTotalC()}</td>
-                        </tr>
+                       
             
             
             </tbody>
             </table>
-  
+ 
 
             </div>
-
+  <h3 style={{marginLeft:"56%"}}>Total Credit Incomes(Rs) :&emsp;{calculateTotalC()}/=</h3> 
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
     )
 

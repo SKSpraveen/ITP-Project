@@ -56,51 +56,48 @@ function Income() {
             <Header />
             <br />
             <br />
-            <div className="card-body cbody" style={{ width: "60%", marginLeft: "20%" }}>
-                <h5 className="card-header chead" style={{ paddingLeft: "4%", paddingTop: "1%", paddingBottom: "3%", fontSize: "30px" }}>Incomes</h5><br />
-                <div class="d-grid gap-2 d-md-block">
-                    <button className="QuickViewbtn" style={{ marginLeft: "40%", marginTop: "1%" }} onClick={() => navigate('/Bankintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Bank Payment</button>
-                </div>
-                <div class="d-grid gap-2 d-md-block">
-                    <button className="QuickViewbtn" style={{ marginLeft: "40%", marginTop: "1%" }} onClick={() => navigate('/Directintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Direct Payment</button>
-                </div>
-                <div class="d-grid gap-2 d-md-block">
-                    <button className="QuickViewbtn" style={{ marginLeft: "40%", marginTop: "1%", marginBottom: "5%" }} onClick={() => navigate('/Cardintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Card Payment</button>
+            <div className="card-body cbody" style={{width:"80%",marginLeft:"10%",paddingBottom:"20px"}}>
+                <h5 className="card-header chead">Quick Views</h5><br />
+                    <div class="d-grid gap-2 d-md-block">
+                        <button className=" QuickViewbtn" style={{marginLeft:"5%"}} onClick={()=> navigate('/Bankintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Bank Payment</button>
+                        <button className=" QuickViewbtn" style={{marginLeft:"17%"}} onClick={()=> navigate('/Directintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Direct Payment</button>
+                        <button className=" QuickViewbtn" style={{marginLeft:"20%"}} onClick={()=> navigate('/Cardintable')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Card Payment</button>
+                        
                 </div>
             </div>
-            <div style={{backgroundColor:"black",marginTop:"10%"}}>
+            <br />
+            <div style={{backgroundColor:"#000000cd",marginTop:"2%",height:"60%"}}>
                 <h2 style={{fontSize:"50px"}}>Total Incomes</h2>
 
                 <div className="full">
                     <div className="rflex-container">
       
 
-                        <div  style={{ backgroundColor: "#f77834", padding: "20px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)" }} className="rflex-box">
-                            <h1 style={{ fontSize: "30px", marginTop: "20px", marginBottom: "10px", color: "#0f0f0f" ,fontWeight:"bold"}}>Total Bank Income</h1>
-                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "20px", color: "#fff", fontWeight: "bold" }}>{totalBankIncome}</h2>
+                        <div  style={{ backgroundColor: "#f77834", padding: "10px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",height:"200px" }} className="rflex-box">
+                            <h1 style={{ fontSize: "30px", marginTop: "10px", marginBottom: "10px", color: "#0f0f0f" ,fontWeight:"bold"}}>Total Bank Income</h1>
+                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "10px", color: "#fff", fontWeight: "bold" }}>{totalBankIncome}</h2>
                         </div>
 
-                        <div  style={{ backgroundColor: "#f77834", padding: "20px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)" }} className="rflex-box">
-                            <h1 style={{ fontSize: "30px", marginTop: "20px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Total Credit Income</h1>
-                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "20px", color: "#fff", fontWeight: "bold" }}>{totalCreditIncome}</h2>
+                        <div  style={{ backgroundColor: "#f77834", padding: "10px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",height:"200px" }} className="rflex-box">
+                            <h1 style={{ fontSize: "30px", marginTop: "10px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Total Credit Income</h1>
+                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "10px", color: "#fff", fontWeight: "bold" }}>{totalCreditIncome}</h2>
                         </div>
 
-                        <div  style={{ backgroundColor: "#f77834", padding: "20px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)" }} className="rflex-box">
-                            <h1 style={{ fontSize: "30px", marginTop: "20px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Total Direct Income</h1>
-                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "20px", color: "#fff", fontWeight: "bold" }}>{totalDirectIncome}</h2>
+                        <div  style={{ backgroundColor: "#f77834", padding: "10px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",height:"200px" }} className="rflex-box">
+                            <h1 style={{ fontSize: "30px", marginTop: "10px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Total Direct Income</h1>
+                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "10px", color: "#fff", fontWeight: "bold" }}>{totalDirectIncome}</h2>
                         </div>
 
-                        <div  style={{ backgroundColor: "#f77834", padding: "20px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)" }} className="rflex-box">
-                            <h1 style={{ fontSize: "30px", marginTop: "20px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Sum of Totals</h1>
+                        <div  style={{ backgroundColor: "#f77834", padding: "10px", borderRadius: "10px", boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",height:"200px" }} className="rflex-box">
+                            <h1 style={{ fontSize: "30px", marginTop: "10px", marginBottom: "10px", color: "#0f0f0f",fontWeight:"bold" }}>Sum of Totals</h1>
                             <br></br>
-                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "20px", color: "#fff", fontWeight: "bold" }}>{sumOfTotals}</h2>
+                            <h2 style={{ fontSize: "70px", marginTop: "10px", marginBottom: "10px", color: "#fff", fontWeight: "bold" }}>{sumOfTotals}</h2>
                         </div>
 
                      </div>
                 </div>
-
-
             </div>
+            <br /><br />
         </div>
     )
 }

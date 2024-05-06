@@ -42,19 +42,14 @@ function incomeTabale({ rows }){
                                 <td colSpan="5" className="text-center">No Data found</td>
                             </tr>
                         )}
-                        {/* Display total */}
-                        <tr>
-                            <td colSpan="4" className="text-right">Total Bank Incomes(Rs):</td>
-                            <td className="rtdTable">{calculateTotalB()}</td>
-                        </tr>
-            
             
             </tbody>
             </table>
   
 
             </div>
-
+  <h3 style={{marginLeft:"60%"}}>Total Bank Incomes(Rs) :&emsp;{calculateTotalB()}/=</h3>
+  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
         </div>
     )
 

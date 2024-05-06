@@ -32,8 +32,7 @@ function directincomeTabale({ rows }){
                                 <tr className="rtrTable" key={index}>
                                     <td className="rtdTable">{Directincome.product}</td>
                                     <td className="rtdTable">{Directincome.amount}</td>
-                                    
-                                    
+
                                 </tr>
 
                             ))
@@ -42,20 +41,17 @@ function directincomeTabale({ rows }){
                                 <td colSpan="5" className="text-center">No Data found</td>
                             </tr>
                         )}
-                        {/* Display total */}
-                        <tr>
-                            <td colSpan="4" className="text-right">Total Direct Incomes(Rs):</td>
-                            <td className="rtdTable">{calculateTotalD()}</td>
-                        </tr>
+                       
                         
             
             
             </tbody>
             </table>
-  
+         
 
             </div>
-
+  <h3 style={{marginLeft:"60%"}}> Total Direct Incomes(Rs) :&emsp{calculateTotalD()}</h3>
+  <br /><br /><br /><br /><br /><br />
         </div>
     )
 
