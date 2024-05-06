@@ -17,9 +17,9 @@ const Accordionuser = ({ rows, selectedFaqs, deleteFaqs }) => {
             <div>
             <div className="accordion">
                 {rows.map((row, index) => (
-                    <div className="card" key={index}>
-                        <div className="item" onClick={() => toggleAccordion(index)}>
-                            <p className="text">{row.faqquestion}</p>
+                    <div className="cardnuw" key={index}>
+                        <div className="itemnuw" onClick={() => toggleAccordion(index)}>
+                            <p className="textnuw">{row.faqquestion}</p>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"

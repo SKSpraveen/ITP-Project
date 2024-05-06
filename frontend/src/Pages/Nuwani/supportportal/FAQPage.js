@@ -23,7 +23,7 @@ const FAQPage = () => {
             {submittedFAQs.map((faq, index) => (
                 <Accordion key={index} question={faq.question} answer={faq.answer} />
             ))}
-            <Footer /> 
+             <Footer />
         </div>
     );
 }

@@ -3,7 +3,7 @@ body {
  
 }
 
-.card-container {
+.cardnuw-container {
   display: flex;
   width: 90%;
   flex-wrap: wrap;
@@ -11,7 +11,7 @@ body {
   
 }
 
-.card {
+.cardnuw {
   flex: 0 0 calc(33.333% - 16px);
   height: 10%;
   margin-right: 1%;
@@ -26,11 +26,11 @@ body {
   
 }
 
-.card:last-child {
+.cardnuw:last-child {
   margin-right: 0;
 }
 
-.user-details {
+.user-detailsnuww {
   display: flex;
   align-items: center;
   padding: 16px;
@@ -38,7 +38,7 @@ body {
   border-radius: 4px 4px 0 0;
 }
 
-.user-details img {
+.user-detailsnuww img {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -46,11 +46,11 @@ body {
   margin-right: 16px;
 }
 
-.user-details h3 {
+.user-detailsnuww h3 {
   margin: 0;
 }
 
-.card-content {
+.cardnuw-content {
   padding: 16px;
   flex: 1;
   display: flex;
@@ -59,11 +59,11 @@ body {
 
 }
 
-.card-content div {
+.cardnuw-content div {
   margin-bottom: 5px;
 }
 
-.card-content p {
+.cardnuw-content p {
   margin: 0;
 }
 .username{
@@ -96,7 +96,7 @@ body {
   font-size: 30px;
 }
 
-.card-icons {
+.cardnuw-icons {
   position: absolute;
   bottom: 16px;
   right: 16px;

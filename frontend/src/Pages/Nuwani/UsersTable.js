@@ -32,16 +32,16 @@ const UsersTable = ({ rows, selectedUser, deleteUser, fname }) => {
   return (
     <div>
      
-      <div className="card-container">
+      <div className="cardnuw-container">
         {rows.map((row, index) => (
-          <div className="card" key={index}>
-            <div className="user-details">
+          <div className="cardnuw" key={index}>
+            <div className="user-detailsnuww">
               <img src={userImage} alt="User" />
               <div className="username">
                 <h5><b>{row.fname}</b></h5> 
               </div>
             </div>
-            <div className="card-content">   
+            <div className="cardnuw-content">   
               <p className="service">Service Type: {row.service}</p><br></br>
 
               <div className="rating">
@@ -52,7 +52,7 @@ const UsersTable = ({ rows, selectedUser, deleteUser, fname }) => {
                 <p className="feed">{row.feedback}</p>
               </div><br></br>
             </div>
-            <div className="card-icons">
+            <div className="cardnuw-icons">
               <button className="icon-link" onClick={() => handleEditClick(row)} aria-label="Edit">
                 <img className="pencil-icon" src={pencilImage} alt="Edit" />
               </button>

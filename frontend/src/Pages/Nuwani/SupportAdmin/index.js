@@ -4,7 +4,7 @@ import { ChatEngine } from 'react-chat-engine';
 const SupportAdmin = () => {
   return (
     <ChatEngine
-      projectID={process.env.REACT_APP_CE_PRIVATE_ID} 
+      projectID="dfdb9dde-05f8-49fc-a3fc-c62ea01e8a4d"
       userName='Proton'
       userSecret='2002'
       height='calc(100vh - 12px)'

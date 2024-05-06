@@ -7,7 +7,7 @@
     align-items: center; /* Center items horizontally */
 }
 
-.item{
+.itemnuw{
     display: grid;
     grid-template-columns: auto 1fr auto;
     column-gap: 24px;
@@ -21,7 +21,7 @@
 }
 
 .number,
-.text{
+.textnuw{
     color: #d05922;
     font-size: 24px;
     font-weight: 500;
@@ -80,7 +80,7 @@
     font-size: 20px; /* Adjust placeholder text size */
 }
 
-.card-icons {
+.cardnuw-icons {
     position: absolute;
     bottom: 16px;
     right: 16px;
@@ -114,6 +114,6 @@
   }
 
   .faq-answer {
-    max-height: 200px; /* Set a fixed height for the answer box */
-    overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+    max-height: 200px; 
+    overflow-y: auto; 
 }

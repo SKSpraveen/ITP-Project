@@ -39,7 +39,7 @@ function ComplaintAdmin() {
 
     return (
         <Box style={{ textAlign: 'center' }}>
-            <Header />
+           <br></br>
             <TextField
     label={<span style={{ fontWeight: 'bold' }}>Search by ID</span>}
     variant="outlined"

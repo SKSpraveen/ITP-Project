@@ -94,7 +94,7 @@ function Header() {
 
                             <li className="nav-item dropdown" style={{ marginLeft: "23%" }}>
                                 <a className="nav-link_H dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Instollation
+                                    Installation
                                 </a>
                                 <ul className="dropdown-menu" style={{ width: "255px" }}>
                                     <li>
@@ -131,7 +131,7 @@ function Header() {
                             <li className="nav-item" style={{ marginLeft: "23%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
-                                    <a className="nav-link_H" href="#">
+                                    <a className="nav-link_H" href="aboutus">
                                         Aboutus
                                     </a>
                                 </button>
@@ -140,8 +140,8 @@ function Header() {
                             <li className="nav-item" style={{ marginLeft: "23%" }}>
                                 <button className="nav-btn" onClick={() => navigate("/")}>
                                     {" "}
-                                    <a className="nav-link_H" href="#">
-                                        Complain
+                                    <a className="nav-link_H" href="complaints">
+                                        Complaint
                                     </a>
                                 </button>
                             </li>

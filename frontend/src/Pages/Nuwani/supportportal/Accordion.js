@@ -33,9 +33,9 @@ const Accordion = ({ rows, selectedFaqs, deleteFaqs}) => {
             <div>
             <div className="accordion">
                 {rows.map((row, index) => (
-                    <div className="card" key={index}>
-                        <div className="item" onClick={() => toggleAccordion(index)}>
-                            <p className="text">{row.faqquestion}</p>
+                    <div className="cardnuw" key={index}>
+                        <div className="itemnuw" onClick={() => toggleAccordion(index)}>
+                            <p className="textnuw">{row.faqquestion}</p>
                            
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@ const Accordion = ({ rows, selectedFaqs, deleteFaqs}) => {
                                 <p>{row.faqanswer}</p>
                             </div>
                         )}
-                        <div className="card-icons">
+                        <div className="cardnuw-icons">
                             <button className="icon-link" onClick={() => handleEditClick(row)} aria-label="Edit">
                                 <img className="pencil-icon" src={pencilImage} alt="Edit" />
                             </button>
@@ -67,7 +67,7 @@ const Accordion = ({ rows, selectedFaqs, deleteFaqs}) => {
             
           
             </div>
-            <Footer />
+           
         </div>
        
     );

@@ -13,10 +13,10 @@ const RatingCal = ({ totalCardContainers, ratingsCount }) => {
     return (
       <div>
        
-        <div className="card-container">
+        <div className="cardnuw-container">
        
-            <div className="card">
-              <div className="user-details">
+            <div className="cardnuw">
+              <div className="user-detailsnuww">
                
                 <div className="username">
                   <h5><b>Total Ratings: {totalCardContainers}</b></h5>

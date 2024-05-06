@@ -88,15 +88,15 @@ const FAQAdmin = ({ addFaqs, updateFaqs, submitted, data, isEdit }) => {
             <div className="form-container">
                 <div id="popupsmart-feedback">
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="faqquestion">Question:</label><br />
+                        <label class="labelnuw" htmlFor="faqquestion">Question:</label><br />
                         <textarea id="faqquestion" name="faqquestion" value={faqquestion} onChange={handleFaqQChange} placeholder="Your question"></textarea>
                         {faqQuestionError && <span className="error">{faqQuestionError}</span>}<br />
       
-                        <label htmlFor="faqanswer">Answer:</label><br />
+                        <label class="labelnuw" htmlFor="faqanswer">Answer:</label><br />
                         <textarea id="faqanswer" name="faqanswer" value={faqanswer} onChange={handleFaqAChange} placeholder="Your answer"></textarea>
                         {faqAnswerError && <span className="error">{faqAnswerError}</span>}<br />
                 
-                        <input type="submit" value={submitButtonNamefaq} />
+                        <input class="inputfeedback" type="submit" value={submitButtonNamefaq} />
                     </form>
                 </div>
             </div>

@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Header from '../../Components/Header';
 import Usertableuser from './Usertableuser';
-import RatingCal from './RatingCal'; 
+import RatingCal from './RatingCal';
 import './userTable.css';
-import { Box, Button } from '@mui/material'; 
+import { Box, Button } from '@mui/material';
 import Axios from "axios";
 import { jsPDF } from 'jspdf';
 
-
 function Nonregfeedback() {
     const [users, setUsers] = useState([]);
-    const [loading, setLoading] = useState(true); 
+    const [loading, setLoading] = useState(true);
     const [totalCardContainers, setTotalCardContainers] = useState(0);
-    const [ratingsCount, setRatingsCount] = useState({}); 
-   
-    
+    const [ratingsCount, setRatingsCount] = useState({});
+
     useEffect(() => {
         getUsers();
     }, []);
@@ -26,11 +24,11 @@ function Nonregfeedback() {
                 setUsers(feedData);
                 setTotalCardContainers(feedData.length);
                 calculateRatingsCount(feedData); // Calculate ratings count
-                setLoading(false); 
+                setLoading(false);
              })
              .catch(error => {
                 console.error("Axios Error : ", error);
-                setLoading(false); 
+                setLoading(false);
              });
     }
 
@@ -40,6 +38,7 @@ function Nonregfeedback() {
         let count4Star = 0;
         let count3Star = 0;
         let count2Star = 0;
+        let count1Star = 0;
 
         // Loop through the data to count ratings
         data.forEach(row => {
@@ -56,6 +55,9 @@ function Nonregfeedback() {
                 case 2:
                     count2Star++;
                     break;
+                case 1:
+                    count1Star++;
+                    break;
                 default:
                     break;
             }
@@ -66,46 +68,45 @@ function Nonregfeedback() {
             count5Star,
             count4Star,
             count3Star,
-            count2Star
+            count2Star,
+            count1Star
         });
     }
 
-    const deleteUser = (id) => {
-        Axios.post('http://localhost:8070/api/deleteuser', { id })
-        .then(() => {
-            getUsers();
-        })
-        .catch(error => {
-            console.error("Axios Error : ", error);
-        });
-    }
-
-    // Function to handle download summary
-    const handleDownloadSummary = () => {
+    // Function to handle generating PDF report
+    const generatePDFReport = () => {
         const doc = new jsPDF();
+
+        // Define table content
+        const tableContent = [
+            ['Star Rating', 'Count'],
+            ['5 Star', ratingsCount.count5Star],
+            ['4 Star', ratingsCount.count4Star],
+            ['3 Star', ratingsCount.count3Star],
+            ['2 Star', ratingsCount.count2Star],
+            ['1 Star', ratingsCount.count1Star]
+        ];
+
+        // Set header
         doc.text('Feedback Summary', 10, 10);
-        doc.text(`Total Card Containers: ${totalCardContainers}`, 10, 20);
-        doc.text(`5-Star Count: ${ratingsCount.count5Star}`, 10, 30);
-        doc.text(`4-Star Count: ${ratingsCount.count4Star}`, 10, 40);
-        doc.text(`3-Star Count: ${ratingsCount.count3Star}`, 10, 50);
-        doc.text(`2-Star Count: ${ratingsCount.count2Star}`, 10, 60);
+
+        // Add table
+        doc.autoTable({
+            startY: 20,
+            head: [tableContent[0]],
+            body: tableContent.slice(1),
+        });
+
+        // Save PDF
         doc.save('feedback_summary.pdf');
-    }
+    };
 
     return (
         <Box style={{ textAlign: 'center' }}>
             <Header />
-            <RatingCal totalCardContainers={totalCardContainers} ratingsCount={ratingsCount} /> {/* Pass totalCardContainers and ratingsCount as props */}
-            <Button variant="contained" onClick={handleDownloadSummary} style={{ margin: '20px auto' }}>Download Summary</Button> {/* Button for downloading summary */}
-            {loading ? (
-                <div>Loading...</div>
-            ) : (
-                <Usertableuser 
-                    rows={users}
-                    deleteUser={deleteUser}
-                />
-            )}
-            
+            <RatingCal totalCardContainers={totalCardContainers} ratingsCount={ratingsCount} />
+            <Button variant="contained" onClick={generatePDFReport} style={{ margin: '20px auto' }}>Generate PDF Report</Button>
+            <Usertableuser rows={users} />
         </Box>
     );
 }

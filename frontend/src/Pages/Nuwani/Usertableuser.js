@@ -19,16 +19,16 @@ const Usertableuser = ({ rows, selectedUser, deleteUser }) => {
   return (
     <div>
      
-      <div className="card-container">
+      <div className="cardnuw-container">
         {rows.map((row, index) => (
-          <div className="card" key={index}>
-            <div className="user-details">
+          <div className="cardnuw" key={index}>
+            <div className="user-detailsnuww">
               <img src={userImage} alt="User" />
               <div className="username">
                 <h5><b>{row.fname}</b></h5>
               </div>
             </div>
-            <div className="card-content">   
+            <div className="cardnuw-content">   
               <p className="service">Service Type: {row.service}</p><br></br>
 
               <div className="rating">

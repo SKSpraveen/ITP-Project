@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Footer from '../../../Components/Footer';
+//import Footer from '../../../Components/Footer';
 import '../userTable.css';
 import './CompUsertable.css';
 import Button from '@mui/material/Button';
 import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import "jspdf-autotable";
 
 const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
   const [rowData, setRowData] = useState(rows);
@@ -49,19 +49,18 @@ const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
   const handleGenerateReport = () => {
     const doc = new jsPDF();
 
-    // Get the table element
-    const table = document.querySelector('.user-table');
+    // Set header
+    doc.setFontSize(18);
+    doc.text("Complaints Summary", 10, 10);
 
-    // Convert the table to canvas using html2canvas
-    html2canvas(table).then(canvas => {
-      const imgData = canvas.toDataURL('image/png');
-
-      // Add the canvas image to the PDF
-      doc.addImage(imgData, 'PNG', 5, 5, 180, 120);
-
-      // Save the PDF
-      doc.save('complaints_summary.pdf');
+    // Create the table with user data
+    doc.autoTable({
+      head: [['ID', 'Username', 'Email', 'Status', 'Category']],
+      body: rowData.map(row => [row.id, row.uname, row.email, row.status, row.category]),
     });
+
+    // Save the PDF
+    doc.save('complaints_summary.pdf');
   };
 
   return (
@@ -119,7 +118,7 @@ const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
           ))}
         </tbody>
       </table>
-      <Footer />
+     
     </div>
   );
 }

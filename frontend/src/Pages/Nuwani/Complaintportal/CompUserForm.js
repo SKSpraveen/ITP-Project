@@ -83,11 +83,11 @@ const CompUserForm = ({ addComps, updateComps, submitted, data, isEdit }) => {
             <div className="form-container">
                 <div id="popupsmart-feedback">
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="uname">Username:</label>
+                        <label class="labelnuw" htmlFor="uname">Username:</label>
                         <input type="text" id="uname" name="uname" value={uname} onChange={handleUnameChange}/><br /><br />
-                        <label htmlFor="email">Email:</label>
+                        <label class="labelnuw" htmlFor="email">Email:</label>
                         <input type="email" id="email" name="email" value={email} onChange={handleEmailChange}/><br /><br />
-                        <label htmlFor="category">Category</label>
+                        <label class="labelnuw" htmlFor="category">Category</label>
                         <select id="category" name="category" value={category} onChange={handleCategoryChange}>
                             <option value="">Select a category</option>
                             <option value="Installation">Installation</option>
@@ -95,10 +95,10 @@ const CompUserForm = ({ addComps, updateComps, submitted, data, isEdit }) => {
                             <option value="Other">Other</option>
                         </select>
                         
-                        <label htmlFor="complaint">Your Complaint:</label><br />
-                        <textarea id="complaint" name="complaint" value={complaint} onChange={handleComplaintChange} placeholder="What can we do to improve your experience." maxLength={50}></textarea><br />
+                        <label class="labelnuw" htmlFor="complaint">Your Complaint:</label><br />
+                        <textarea class="textareafeed" id="complaint" name="complaint" value={complaint} onChange={handleComplaintChange} placeholder="What can we do to improve your experience." maxLength={50}></textarea><br />
                         
-                        <input type="submit" value={submitButtonName} />
+                        <input class="inputfeedback" type="submit" value={submitButtonName} />
                     </form>
                 </div>
             </div><br></br><br></br>

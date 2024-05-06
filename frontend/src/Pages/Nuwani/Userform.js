@@ -112,8 +112,8 @@ const UserForm = ({ addUser, updateUser, submitted, data, isEdit }) => {
       <Header /> 
       <div className="form-container">
         <div id="popupsmart-feedback">
-          <h2>We appreciate your feedback!</h2>
-          <p>We are always looking for ways to improve your experience. 
+          <h2 class="h2nuw">We appreciate your feedback!</h2>
+          <p class="pnuw">We are always looking for ways to improve your experience. 
             Please take a moment to evaluate and tell us what you think.</p>
           
           <div className='stars'>
@@ -137,7 +137,7 @@ const UserForm = ({ addUser, updateUser, submitted, data, isEdit }) => {
           </div>
 
           <form onSubmit={handleSubmit}>
-            <label htmlFor="service">Service type</label>
+            <label class="labelnuw" htmlFor="service">Service type</label>
             <select id="service" name="service" value={service} onChange={handleServiceChange}>
               <option value="">Select a service</option>
               <option value="Installation">Installation</option>
@@ -145,15 +145,15 @@ const UserForm = ({ addUser, updateUser, submitted, data, isEdit }) => {
             </select>
             {serviceError && <span className="error">{serviceError}</span>}
 
-            <label htmlFor="fname">Username:</label>
+            <label class="labelnuw" htmlFor="fname">Username:</label>
                         <input type="text" id="fname" name="fname" value={fname} onChange={handleFnameChange}/><br /><br />
                         {fnameError && <span className="error">{fnameError}</span>}
             
-            <label htmlFor="feedback">Your feedback:</label><br />
-            <textarea id="feedback" name="feedback" value={feedback} onChange={handleFeedbackChange} placeholder="What can we do to improve your experience." maxLength={50}></textarea><br />
+            <label class="labelnuw" htmlFor="feedback">Your feedback:</label><br />
+            <textarea class="textareafeed" id="feedback" name="feedback" value={feedback} onChange={handleFeedbackChange} placeholder="What can we do to improve your experience." maxLength={50}></textarea><br />
             {feedbackError && <span className="error">{feedbackError}</span>}
             
-            <input type="submit" value={submitButtonName} />
+            <input class="inputfeedback" type="submit" value={submitButtonName} />
           </form>
         </div>
       </div>
