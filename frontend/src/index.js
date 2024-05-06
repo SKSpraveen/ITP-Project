@@ -57,6 +57,16 @@ import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
 
+//Nuwani
+import CompUser from './Pages/Nuwani/Complaintportal/CompUser';
+import Users from './Pages/Nuwani/Users';
+import Accord from './Pages/Nuwani/supportportal/Accord';
+import FAQs from './Pages/Nuwani/supportportal/FAQs';
+import SupportAdmin from './Pages/Nuwani/SupportAdmin';
+import Nonregfeedback from './Pages/Nuwani/Nonregfeedback';
+import ComplaintAdmin from './Pages/Nuwani/Complaintportal/ComplaintAdmin';
+import Aboutuspage from './Aboutus/Aboutuspage';
+
 
 
 
@@ -121,7 +131,17 @@ ReactDOM.render(
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
-
+      {/*Nuwani*/}
+      <Route path='/users' element={<Users />} />
+      <Route path='/faqs' element={<Accord />} />
+      <Route path='/faqadmin' element={<FAQs  />} />
+      <Route path='/support' element={<SupportAdmin />} /> 
+      <Route path='/complaints' element={<CompUser />} />
+      <Route path='/nonregfeed' element={<Nonregfeedback />} />
+      <Route path='/compadmin' element={<ComplaintAdmin />} />
+      <Route path='/aboutus' element={<Aboutuspage />} />
+     
+      
         
       </Routes>
       </AuthContextProvider>
