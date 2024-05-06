@@ -116,7 +116,14 @@ function MyCart() {
                                     <td style={{ textAlign: "center" }}>{cart.amount}</td>
                                     <td style={{ textAlign: "center" }}>{cart.amount * cart.orderQuantity+350}</td>
                                     <td>
-                                        <button type="button"  onClick={() => navigate('/payments')} className="btnPay">Pay</button>
+                                    <button type="button" onClick={() => navigate('/payments', {
+    state: {
+        product: cart.product,
+        amount: cart.amount * cart.orderQuantity + 350, // Total price including delivery
+        orderQuantity: cart.orderQuantity
+    }
+})} className="btnPay">Pay</button>
+
                                     </td>
                                 </tr>
                             ))}
