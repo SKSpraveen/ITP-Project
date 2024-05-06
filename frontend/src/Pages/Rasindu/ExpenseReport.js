@@ -99,7 +99,7 @@ function ExpenseReport(){
 
 
     return(
-    <div>
+    <div className="body1">
            <Header />
            <br />
            <br />
@@ -182,6 +182,8 @@ function ExpenseReport(){
                 </div>
             </div>
         </div>
+        <br></br>
+        <br></br>
     </div>
     )
 }

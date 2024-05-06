@@ -1,18 +1,16 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+
 import '../../Components/Rasindu/css/table.css';
 
-
-function incomeTabale({ rows }){
+function creditincomeTabale({ rows }){
     // Function to calculate total amount
-    const calculateTotalB = () => {
+    const calculateTotalC = () => {
         let total = 0;
-        rows.forEach(Bankincome => {
-            total += Bankincome.amount;
+        rows.forEach(Creditincome => {
+            total += Creditincome.amount;
         });
         return total;
     };
-
 
     
     return(
@@ -29,10 +27,10 @@ function incomeTabale({ rows }){
             </thead>
             <tbody className="table-hover">
             {rows && rows.length > 0 ? (
-                            rows.map((Bankincome, index) => (
+                            rows.map((Creditincome, index) => (
                                 <tr className="rtrTable" key={index}>
-                                    <td className="rtdTable">{Bankincome.product}</td>
-                                    <td className="rtdTable">{Bankincome.amount}</td>
+                                    <td className="rtdTable">{Creditincome.product}</td>
+                                    <td className="rtdTable">{Creditincome.amount}</td>
                                     
                                     
                                 </tr>
@@ -44,8 +42,8 @@ function incomeTabale({ rows }){
                         )}
                         {/* Display total */}
                         <tr>
-                            <td colSpan="4" className="text-right">Total Bank Incomes(Rs):</td>
-                            <td className="rtdTable">{calculateTotalB()}</td>
+                            <td colSpan="4" className="text-right">Total Credit Incomes(Rs):</td>
+                            <td className="rtdTable">{calculateTotalC()}</td>
                         </tr>
             
             
@@ -59,4 +57,4 @@ function incomeTabale({ rows }){
     )
 
 }
-export default incomeTabale;
+export default creditincomeTabale;

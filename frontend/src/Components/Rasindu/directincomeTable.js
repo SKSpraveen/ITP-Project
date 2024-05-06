@@ -1,18 +1,17 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+
 import '../../Components/Rasindu/css/table.css';
 
-
-function incomeTabale({ rows }){
+function directincomeTabale({ rows }){
     // Function to calculate total amount
-    const calculateTotalB = () => {
+    const calculateTotalD = () => {
         let total = 0;
-        rows.forEach(Bankincome => {
-            total += Bankincome.amount;
+        rows.forEach(Directincome => {
+            total += Directincome.amount;
         });
         return total;
     };
-
+    
 
     
     return(
@@ -29,13 +28,14 @@ function incomeTabale({ rows }){
             </thead>
             <tbody className="table-hover">
             {rows && rows.length > 0 ? (
-                            rows.map((Bankincome, index) => (
+                            rows.map((Directincome, index) => (
                                 <tr className="rtrTable" key={index}>
-                                    <td className="rtdTable">{Bankincome.product}</td>
-                                    <td className="rtdTable">{Bankincome.amount}</td>
+                                    <td className="rtdTable">{Directincome.product}</td>
+                                    <td className="rtdTable">{Directincome.amount}</td>
                                     
                                     
                                 </tr>
+
                             ))
                         ) : (
                             <tr>
@@ -44,9 +44,10 @@ function incomeTabale({ rows }){
                         )}
                         {/* Display total */}
                         <tr>
-                            <td colSpan="4" className="text-right">Total Bank Incomes(Rs):</td>
-                            <td className="rtdTable">{calculateTotalB()}</td>
+                            <td colSpan="4" className="text-right">Total Direct Incomes(Rs):</td>
+                            <td className="rtdTable">{calculateTotalD()}</td>
                         </tr>
+                        
             
             
             </tbody>
@@ -59,4 +60,4 @@ function incomeTabale({ rows }){
     )
 
 }
-export default incomeTabale;
+export default directincomeTabale;

@@ -35,7 +35,7 @@ import Cart_View from './Installation/Cart_View';
 import OrderManagerDashboard from './Pages/Samidi/OrderManagerDashboard';
 import ViewTable from './Pages/Samidi/ViewTable';
 
-
+//Rasindu
 import Financialhome from './Pages/Rasindu/financialhome.js';
 import Addexpences from './Pages/Rasindu/Addexpences';
 import Expence from './Pages/Rasindu/expence';
@@ -43,7 +43,10 @@ import Income from './Pages/Rasindu/Income';
 import UpdateExpence from './Pages/Rasindu/update.js'
 import ExpenseReport from './Pages/Rasindu/ExpenseReport.js';
 import FinalReport from './Pages/Rasindu/finalReport.js';
-
+import BankIncome from './Pages/Rasindu/BankIncome.js';
+import CreditIncome from './Pages/Rasindu/CreditIncome.js'; 
+import DirecttIncome from './Pages/Rasindu/DirectIncome.js';
+import IncomeReport from './Pages/Rasindu/incomeReport.js';
 
 //Kavishka
 import Admin from './Pages/Kavishka/Admin.js';
@@ -56,6 +59,8 @@ import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
+
+
 
 
 
@@ -103,6 +108,10 @@ ReactDOM.render(
         <Route path='/updateExpence/:expenceId' element={<UpdateExpence />}/>
         <Route path='/report' element={<ExpenseReport />}/>
         <Route path='/finalReport' element={<FinalReport/>}/>
+        <Route path='/Bankintable' element={<BankIncome/>}/>
+        <Route path='/Cardintable' element={<CreditIncome/>}/>
+        <Route path='/Directintable' element={<DirecttIncome/>}/>
+        <Route path='/incomeReport' element={<IncomeReport/>}/>
 
         <Route path='/signup' element={< Signup />} />
         <Route path='/userhome' element={<UserHome/>}/>

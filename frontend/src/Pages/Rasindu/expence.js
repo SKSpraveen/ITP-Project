@@ -23,7 +23,7 @@ function Expence() {
 
     
     return (
-        <div>
+        <div className="body1">
             <Header />
             <ExpenceTable rows={expenses} />
         </div>
