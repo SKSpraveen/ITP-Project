@@ -4,9 +4,9 @@ import RepairDetails from "../../Components/Samidi/OMComponents/RepairDetails";
 function ViewTable() {
     return (
   
-        <div>
+        <div className="body1">
           <OM_Dashboard_Header />
-      <RepairDetails />
+          <RepairDetails />
         </div>
     );
   }

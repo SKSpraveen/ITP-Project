@@ -74,7 +74,7 @@ function PaymentManagerDashboard() {
     };
 
     return (
-        <div>
+        <div className="body1">
             <OM_Dashboard_Header />
             <div style={{ margin: "20px" }}>
                 <label htmlFor="monthSelect">Select Month: </label>

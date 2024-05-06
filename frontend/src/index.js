@@ -58,6 +58,7 @@ import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
+import OM_Dashboard_Content from './Components/Samidi/OMComponents/OM_Dashboard_Content.js';
 
 
 
@@ -123,6 +124,7 @@ ReactDOM.render(
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
+      <Route path="/omdashboard" element={<OM_Dashboard_Content/>}/>
 
         
       </Routes>
