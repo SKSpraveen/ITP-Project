@@ -84,7 +84,7 @@ h2{
     padding: 20px;
     box-shadow: 0 0 4px rgba(80, 79, 79, 0.744);
   }
-  .form-label {
+  .form-label1 {
     font-weight: bold;
     color: black;
     margin-left: 10%;
@@ -97,7 +97,7 @@ h2{
     margin-left: 10%;
   }
   
-  .btn-primary {
+  .btn-primary1 {
    
     margin-left: 16%;
     color:  rgb(236, 67, 0);
@@ -110,14 +110,10 @@ h2{
     border-radius: 10px;
     
   }
-  .btn-primary:hover {
-   
+  .btn-primary1:hover {
+   color: white;
     background-color:  rgba(24, 21, 21, 0.96);
 }
-
-  .bottom{
-    background-color: hwb(0 100% 0%);
-  }
 
   .error-message {
     color: red;

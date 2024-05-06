@@ -7,12 +7,18 @@ import image from '../../Images/Kavishka/staff.jpg'
 const StaffLogin2 = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [data, setData] = useState([]);
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Validate email and password
+    if (!email || !password) {
+      setError("Please enter both email and password");
+      return;
+    }
+
     try {
       const response = await fetch("http://localhost:8070/api/auth/staff");
 
@@ -54,11 +60,11 @@ const StaffLogin2 = () => {
             navigate("/default_dashboard");
         }
       } else {
-        console.log('Invalid email or password');
-        // Handle invalid email or password
+        setError("Invalid email or password");
       }
     } catch (error) {
       console.error("Error fetching data:", error.message);
+      setError("Failed to fetch data");
     }
   };
 
@@ -82,6 +88,7 @@ const StaffLogin2 = () => {
                   aria-describedby="emailHelp"
                   onChange={(e) => {
                     setEmail(e.target.value);
+                    setError("");
                   }}
                 />
               </div>
@@ -93,26 +100,20 @@ const StaffLogin2 = () => {
                   id="exampleInputPassword1"
                   onChange={(e) => {
                     setPassword(e.target.value);
+                    setError("");
                   }}
                 />
               </div>
-              
-              <br />
-             
-      
-            
+              {error && <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>}
               <button
                 style={{ backgroundColor: "orange", color: "white", padding: "14px 20px", margin: "8px 0", border: "none", borderRadius: "4px", cursor: "pointer", width: "100%" }}
                 type="submit"
                 className="signup-button l4"
                 id="login"
                 onClick={handleSubmit}
-              
               >
                 Login
               </button>
-             
-              
             </form>
           </div>
         </div>

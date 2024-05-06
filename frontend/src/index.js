@@ -24,6 +24,7 @@ import NumberPageForm from './Pages/Anjana/NumberPageForm';
 import DirectPageForm from './Pages/Anjana/DirectPageForm';
 import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
+import PaymentManagerDashboard from './Components/Samidi/OMComponents/PaymentManagerDashboard.js';
 
 
 
@@ -56,6 +57,7 @@ import StaffSignup from './Pages/Kavishka/StaffSignup.js'
 import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
+import Manegars from './Pages/Kavishka/manegars.js'
 
 
 
@@ -119,6 +121,7 @@ ReactDOM.render(
       <Route path="/NumberPageForm" element={<NumberPageForm />} />
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
+      <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
 
         
       </Routes>

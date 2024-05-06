@@ -151,7 +151,7 @@ function AddStockForm() {
                 <form className="row g-3" onSubmit={sendData}>
                     <div className="col-md-5" style={{ marginLeft: "4%" }}>
                         <br /><br />
-                        <label for="inputProductCode" className="form-label">
+                        <label for="inputProductCode" className="form-label1">
                             &ensp;Product Code
                         </label>
                         <input type="text" value={productCode} onChange={(e) => { setProductCode(e.target.value); }} className="form-control" id="productCode" />
@@ -160,7 +160,7 @@ function AddStockForm() {
                      &emsp;
                     <div className="col-md-5">
                         <br /><br />
-                        <label for="inputProductCategory" className="form-label">
+                        <label for="inputProductCategory" className="form-label1">
                             &ensp;Product Category
                         </label>
                         <select id="productCategory" value={productCategory} onChange={(e) => { setProductCategory(e.target.value); }} className="form-select">
@@ -173,7 +173,7 @@ function AddStockForm() {
                         {errors.productCategory && <div className="text-danger" style={{marginLeft:"12%"}}>{errors.productCategory}</div>}
                     </div>
                     <div className="col-md-5" style={{ marginLeft: "4%" }}>
-                        <label for="inputProduct" className="form-label">
+                        <label for="inputProduct" className="form-label1">
                             &ensp;Product
                         </label>
                         <input type="text" value={product} onChange={(e) => { setProduct(e.target.value); }} className="form-control" id="product" />
@@ -181,7 +181,7 @@ function AddStockForm() {
                     </div>
                     &emsp;
                     <div className="col-md-5">
-                        <label for="inputSupplyCompany" className="form-label">
+                        <label for="inputSupplyCompany" className="form-label1">
                             &ensp;Supply Company
                         </label>
                         <input type="text" value={supplyCompany} onChange={(e) => { setSupplyCompany(e.target.value); }} className="form-control" id="supplyCompany" />
@@ -190,7 +190,7 @@ function AddStockForm() {
                     </div>
                     <br />
                     <div className="col-10" style={{ marginLeft: "1%" }}>
-                        <label for="inputDescription" className="form-label">
+                        <label for="inputDescription" className="form-label1">
                             &ensp;Description
                         </label>
                         <input type="text" value={description} onChange={(e) => { setDescription(e.target.value); }} className="form-control" id="description" />
@@ -198,7 +198,7 @@ function AddStockForm() {
                     </div>
                     <br />
                     <div className="col-md-3" style={{ marginLeft: "11%" }}>
-                        <label for="inputDateReceived" className="form-label">
+                        <label for="inputDateReceived" className="form-label1">
                             &ensp;Date Received
                         </label>
                         <input type="date" value={dateReceived} onChange={(e) => { setDateReceived(e.target.value); }} className="form-control" id="dateReceived" />
@@ -206,14 +206,14 @@ function AddStockForm() {
                     </div>
                     <br />
                     <div className="col-md-3">
-                        <label for="inputQuantity" className="form-label">
+                        <label for="inputQuantity" className="form-label1">
                             &ensp;Quantity
                         </label>
                         <input type="text" value={quantity} onChange={(e) => { setQuantity(e.target.value); }} className="form-control" id="quantity" />
                         {errors.quantity && <div className="text-danger" style={{marginLeft:"12%"}}>{errors.quantity}</div>}
                     </div>
                     <div className="col-md-3">
-                        <label for="inputUnitPrice" className="form-label">
+                        <label for="inputUnitPrice" className="form-label1">
                             &ensp;Unit Price
                         </label>
                         <input type="text" value={unitPrice} onChange={(e) => { setUnitPrice(e.target.value); }} className="form-control" id="unitPrice" placeholder=" Rs :" />
@@ -221,7 +221,7 @@ function AddStockForm() {
                     </div>
                     <div className="col-6">
                         <br />
-                        <button type="submit" className="btn btn-primary"> Add</button>
+                        <button type="submit" className="btn btn-primary1"> Add</button>
                     </div>
                 </form>
                 <br />
