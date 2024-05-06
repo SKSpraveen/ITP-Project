@@ -29,6 +29,7 @@ const StaffSchema = new Schema({
 
 // static signup method
 StaffSchema.statics.signup = async function (name, email, role, phoneNumber, password) {
+  
   if (!name || !email || !password || !role || !phoneNumber) {
     throw new Error("All fields must be filled");
   }
@@ -47,13 +48,11 @@ StaffSchema.statics.signup = async function (name, email, role, phoneNumber, pas
     throw new Error("Email already in use");
   }
 
-  const salt = await bcrypt.genSalt(10);
-  const hash = await bcrypt.hash(password, salt);
-
-  const staff = await this.create({ name, email, role, phoneNumber, password: hash });
+  const staff = await this.create({ name, email, role, phoneNumber, password });
 
   return staff;
 };
+
 
 // static login method
 StaffSchema.statics.login = async function (email, password) {
