@@ -5,6 +5,7 @@ const cors = require('cors')
 const app = express()
 const host = 'localhost';
 const router=require('../BACKEND/routes/Anjana/router.js')
+const routerN = require('../BACKEND/routes/Nuwani/router.js');
 
 require('dotenv').config();
 const dotenv = require("dotenv");
@@ -59,3 +60,6 @@ app.use("/api/auth",staff);
 
 const staffRoute =require('./routes/Kavishka/staffRoute')
 app.use("/api/auth", staffRoute);
+
+//Nuwani
+app.use('/api', routerN);
