@@ -155,7 +155,7 @@ const UserProfile = () => {
           </li>
           <br />
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <button type="button" style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
+            <button type="button" onClick={()=> navigate('/UserviewTable')} style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
               My Services
             </button>
           </li>
