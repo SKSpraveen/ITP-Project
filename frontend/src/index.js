@@ -60,6 +60,15 @@ import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
 import OM_Dashboard_Content from './Components/Samidi/OMComponents/OM_Dashboard_Content.js';
 
+//kk
+import Dashboard from './Pages/kk/dashboard';
+import Employee_table from './Pages/kk/employee_table';
+import Salary_table from './Pages/kk/salary_table';
+import Final_report from './Pages/kk/final_report';
+import Em_add_emp from './Pages/kk/em_add_emp';
+import Profile_kk from './Pages/kk/profile';
+import Emp_edit_InternForm from './Pages/kk/emp_edit_InternForm';
+import Salary_cal from './Pages/kk/salary_cal';
 
 
 
@@ -127,6 +136,17 @@ ReactDOM.render(
       <Route path="/omdashboard" element={<OM_Dashboard_Content/>}/>
 
         
+
+
+
+      <Route path='/dashboard' element={<Dashboard />} />
+    <Route path='/empTable' element={<Employee_table />} />
+    <Route path='/salTable' element={<Salary_table />} />
+    <Route path='/finReport' element={<Final_report />} />
+    <Route path='/addEmp' element={<Em_add_emp />} />
+    <Route path='/profile_kk' element={<Profile_kk />} />
+    <Route path='/emp_edit_internForm' element={<Emp_edit_InternForm />} />
+    <Route path='/salary_cal' element={<Salary_cal />} />
       </Routes>
       </AuthContextProvider>
   </BrowserRouter>,
