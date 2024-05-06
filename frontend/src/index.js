@@ -26,13 +26,15 @@ import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
 
 
+
+//Samidi
 import Repair from './Pages/Samidi/Repair';
 import Cart_View from './Installation/Cart_View';
 
-
-//Samidi
 import OrderManagerDashboard from './Pages/Samidi/OrderManagerDashboard';
 import ViewTable from './Pages/Samidi/ViewTable';
+
+
 
 
 import Financialhome from './Pages/Rasindu/financialhome.js';
