@@ -34,8 +34,8 @@ import Cart_View from './Installation/Cart_View';
 
 import OrderManagerDashboard from './Pages/Samidi/OrderManagerDashboard';
 import ViewTable from './Pages/Samidi/ViewTable';
-
-
+import UserViewTable from './Pages/Samidi/UserViewTable';
+import UpdateRepair from './Pages/Samidi/UpdateRepair';
 
 
 import Financialhome from './Pages/Rasindu/financialhome.js';
@@ -92,8 +92,8 @@ ReactDOM.render(
 
         <Route path='/omdashboard' element={<OrderManagerDashboard />} />
         <Route path='/viewTable' element={<ViewTable />} />
-
-        
+        <Route path='/UserviewTable' element={<UserViewTable />} />
+        <Route path='/editRepair/:itemId' element={<UpdateRepair />} />
 
         
 

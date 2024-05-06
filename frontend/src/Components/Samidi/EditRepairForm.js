@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles/Repair.css"; 
+import "../Style/Repair.css";
 import { useParams } from "react-router-dom";
 
 
@@ -120,11 +120,11 @@ function EditRepairForm() {
     };
 
     return(
-        <div className="bottom">
+        <div className="body1">
             <br /> <br />
-            <div className="container">
+            <div className="container1">
                 <br />
-                <h1><i><center>Update Repair Details</center></i></h1>
+                <h1><i style={{marginLeft:"13%"}}>Update Repair Details</i></h1>
                 <br />
 
                 <form onSubmit={handleSubmit} className="row g-3">

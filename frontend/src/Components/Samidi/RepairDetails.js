@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./styles/Repair.css"; 
+import "../Style/Repair.css"; 
 import { useNavigate } from "react-router-dom";
 
 
@@ -45,11 +45,11 @@ function RepairDetails(){
 
 
     return(
-        <div >
+        <div className="body1">
         <br /><br />
 
-        <div className="container" style={{width:"100%"}}>
-            <h1 style={{fontSize:"30px",}}><i>My Repair Request</i></h1>
+        <div className="container1" style={{width:"100%"}}>
+            <h1 style={{fontSize:"30px",marginLeft:"30%"}}><i>My Repair Request</i></h1>
         </div>
         <br />  
         <br />

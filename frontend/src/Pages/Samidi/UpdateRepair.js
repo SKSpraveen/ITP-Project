@@ -1,11 +1,11 @@
-import EditRepairForm from "./Components/EditRepairForm";
+import EditRepairForm from "../../Components/Samidi/EditRepairForm";
 
 
 
 function UpdateRepair() {
     return (
   
-        <div>
+        <div className="body1">
             <EditRepairForm />
         </div>
     );
