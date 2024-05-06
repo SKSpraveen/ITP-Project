@@ -115,6 +115,7 @@ ReactDOM.render(
         <Route path='/userDetails' element={<AdminDash/>}/>
         <Route path='/staff' element={<StaffSignup/>}/>
         <Route path='/stafflogin' element={<StaffLogin/>}/>
+        <Route path='/manager' element={<Manegars/>}/>
 
         <Route path='/' element={<App />} />
         <Route path="/Payments" element={<Payments />} />

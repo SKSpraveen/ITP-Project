@@ -1,6 +1,3 @@
-
-
-
 import { useNavigate } from "react-router-dom";
 
 function Admin() {
@@ -26,6 +23,28 @@ function Admin() {
           </nav>
        
         </div>
+              <br/>
+              <br/>
+              <br/>
+
+                  <div className="card" style={{width:"80%",marginLeft:"10%"}}>
+                
+                <div className="card-body cbody">
+                <h5 className="card-header chead">Quick Views</h5><br />
+                    <div class="d-grid gap-2 d-md-block">
+                        <button className=" QuickViewbtn" style={{marginLeft:"5%"}} onClick={()=> navigate('/smdashboard')} type="button"><i class="fa fa-eye" aria-hidden="true"></i>Stock Manager</button>
+                        <button className=" QuickViewbtn" style={{marginLeft:"6%"}} onClick={()=> navigate('')} type="button"><i class="fa fa-eye" aria-hidden="true"></i>Employee Manager</button>
+                        <button className=" QuickViewbtn" style={{marginLeft:"6%"}} onClick={()=> navigate('/omdashboard')} type="button"><i class="fa fa-eye" aria-hidden="true"></i> Payment Manager</button>
+                        <button className=" QuickViewbtn" style={{marginLeft:"6%"}} onClick={()=> navigate('/home')} type="button"><i class="fa fa-eye" aria-hidden="true"></i>Financial Manager</button><br/><br/>
+                       
+                        <button className=" QuickViewbtn" style={{marginLeft:"6%",width:"300px",marginLeft:"35%" }} onClick={()=> navigate('')} type="button"><i class="fa fa-eye" aria-hidden="true"></i>Transportation Manager</button>
+
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+
+
       </div>
       
     

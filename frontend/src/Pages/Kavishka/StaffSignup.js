@@ -9,12 +9,12 @@ function Signup() {
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
-    const [category, setCategory] = useState("");
+    const [role, setRole] = useState("");
     const { signUp, error, isLoading } = useSignUp();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await signUp(name, email, phoneNumber, password, category);
+        await signUp(name, email, phoneNumber, password, role);
     };
 
     return (
@@ -22,7 +22,6 @@ function Signup() {
             <div className="signup-content">
                 <h2>Sign Up</h2>
                 <form onSubmit={handleSubmit}>
-                    {/* Name and Email in the same row */}
                     <div className="row">
                         <div className="input-group ">
                             <input type="text" id="firstName" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} />
@@ -33,15 +32,16 @@ function Signup() {
                     </div>
                   
                     <div className="input-group">
-                        <select id="inputType" className={`form-select ${error && 'is-invalid'}`} value={category} onChange={(e) => setCategory(e.target.value)}>
+                        <select id="inputType" className={`form-select ${error && 'is-invalid'}`} value={role} onChange={(e) => setRole(e.target.value)}>
                             <option value="" >Role</option>
-                            <option value="Stock Manager">Admin</option>
+                            <option value="Admin">Admin</option>
                             <option value="Stock Manager">Stock Manager</option>
                             <option value="Employee Manager">Employee Manager</option>
                             <option value="Order Manager">Order Manager</option>
                             <option value="Financial Manager">Financial Manager</option>
-                            <option value="Transportation Manager">Transportation Manager</option>
+                            <option value="Transportation Manager">Payment Manager</option>
                         </select>
+                        {error && <div className="invalid-feedback">{error}</div>}
                     </div>
                     <div className="input-group">
                         <input type="text" id="contactNumber" placeholder="Contact Number" value={phoneNumber} onChange={(e) => setPhoneNumber(e.target.value)} />
