@@ -24,6 +24,7 @@ import NumberPageForm from './Pages/Anjana/NumberPageForm';
 import DirectPageForm from './Pages/Anjana/DirectPageForm';
 import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
+import PaymentManagerDashboard from './Components/Samidi/OMComponents/PaymentManagerDashboard.js';
 
 
 import Repair from './Pages/Samidi/Repair';
@@ -112,7 +113,14 @@ ReactDOM.render(
         <Route path='/userDetails' element={<AdminDash/>}/>
         <Route path='/staff' element={<StaffSignup/>}/>
         <Route path='/stafflogin' element={<StaffLogin/>}/>
-        <Route path='/manager' element={<Manegars/>}/>
+
+        <Route path='/' element={<App />} />
+        <Route path="/Payments" element={<Payments />} />
+      <Route path="/NumberPageForm" element={<NumberPageForm />} />
+      <Route path="/DirectPageForm" element={<DirectPageForm />} />
+      <Route path="/BankPageForm" element={<BankPageForm/>} />
+      <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
+
         
       </Routes>
       </AuthContextProvider>

@@ -152,15 +152,17 @@ function Payments() {
     
 
     return (
-        <div>
+        <div >
             <Header />
             <br>
             
             </br> <br /> <br />
-            <div className="container">
+            &emsp;&emsp;&emsp;<div className="container4" style={{ width: "80%", overflowX: 'visible',marginLeft:"12%",background:"rgba(27, 27, 27, 0.744)",height:"40%",borderRadius:"2%" }}>
                 <p></p>
+                <br>
+                </br>
                 <h1 className="h3 mb-5" style={{ fontWeight: "900", color: "rgba(255, 74, 2, 0.816)",marginLeft:"37%" }}>Select Payment Method</h1>
-                <div className="rows" style={{marginLeft:"15%"}}>
+                <div className="rows" style={{marginLeft:"15%",width:"80%"}}>
                     <div className="col-lg-10">
                         <div className="accordion" id="accordionPayment">
                             {/* Credit card */}
@@ -346,7 +348,7 @@ function Payments() {
                                     </div>
                                     <span>
                                         <svg width="34" height="25" xmlns="http://www.w3.org/2000/svg" fill="white">
-                                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 7C10.9 7 10 7.9 10 9H14C14 7.9 13.1 7 12 7ZM12 17C13.1 17 14 16.1 14 15H10C10 16.1 10.9 17 12 17ZM12 11C11.45 11 11 11.45 11 12C11 12.55 11.45 13 12 13C12.55 13 13 12.55 13 12C13 11.45 12.55 11 12 11Z" fill="black" />
+                                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20ZM12 7C10.9 7 10 7.9 10 9H14C14 7.9 13.1 7 12 7ZM12 17C13.1 17 14 16.1 14 15H10C10 16.1 10.9 17 12 17ZM12 11C11.45 11 11 11.45 11 12C11 12.55 11.45 13 12 13C12.55 13 13 12.55 13 12C13 11.45 12.55 11 12 11Z" fill="white" />
                                         </svg>
                                     </span>
                                 </h2>
@@ -410,6 +412,9 @@ function Payments() {
                         </div>
                     </div>
                 </div>
+                <br>
+
+                </br>
             </div>
             <br>
 
