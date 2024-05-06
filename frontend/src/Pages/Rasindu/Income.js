@@ -9,7 +9,7 @@ function income(){
            <Header />
            <br />
            <br />
-           <IncomeTabale/>
+           <IncomeTabale />
 
         </div>
     )

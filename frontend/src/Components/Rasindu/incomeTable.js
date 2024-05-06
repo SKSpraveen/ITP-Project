@@ -2,6 +2,8 @@ import React from "react";
 import '../../Components/Rasindu/css/table.css';
 
 function incomeTabale(){
+
+    
     return(
         <div>
             <div className="rtable-possition">
