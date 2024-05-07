@@ -45,11 +45,11 @@ const StaffLogin2 = () => {
 
             case "Employee Manager":
                 
-                navigate("/stock_manager_dashboard");
+                navigate("/dashboard");
                 break;
             case "Financial Manager":
                   
-                  navigate("/Financial_manager_dashboard");
+                  navigate("/home");
                   break;
             case "Payment Manager":
                   

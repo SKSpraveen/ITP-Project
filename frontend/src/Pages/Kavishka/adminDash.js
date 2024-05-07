@@ -47,9 +47,17 @@ function AdminPanel() {
     
     const generatePDF = () => {
         const doc = new jsPDF();
-        doc.autoTable({ html: '#user-table' });
+        const tableData = dataList.map(user => [user.name, user.email, user.address, user.phoneNumber]);
+        const headers = [['Name', 'Email', 'Address', 'Contact Number']];
+    
+        doc.autoTable({
+            head: headers,
+            body: tableData,
+        });
+    
         doc.save('users.pdf');
     };
+    
 
     const handleSearchArea = (e) => {
         const searchQuery = e.target.value.toLowerCase();
@@ -69,7 +77,7 @@ function AdminPanel() {
     };
 
     return (
-        <div style={{ minHeight: '100vh' }}>
+        <div className="body1" style={{ minHeight: '100vh' }}>
             <div className="header">
                 <br /><br />
                 <h2>Welcome Admin Dashboard !</h2>
