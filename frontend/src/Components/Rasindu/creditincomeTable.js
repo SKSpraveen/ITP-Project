@@ -1,22 +1,20 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+
 import '../../Components/Rasindu/css/table.css';
 
-
-function incomeTabale({ rows }){
+function creditincomeTabale({ rows }){
     // Function to calculate total amount
-    const calculateTotalB = () => {
+    const calculateTotalC = () => {
         let total = 0;
-        rows.forEach(Bankincome => {
-            total += Bankincome.amount;
+        rows.forEach(Creditincome => {
+            total += Creditincome.amount;
         });
         return total;
     };
 
-
     
     return(
-        <div>
+        <div >
             <div className="rtable-possition">
             <table className="rtable-fill">
             <thead>
@@ -29,10 +27,10 @@ function incomeTabale({ rows }){
             </thead>
             <tbody className="table-hover">
             {rows && rows.length > 0 ? (
-                            rows.map((Bankincome, index) => (
+                            rows.map((Creditincome, index) => (
                                 <tr className="rtrTable" key={index}>
-                                    <td className="rtdTable">{Bankincome.product}</td>
-                                    <td className="rtdTable">{Bankincome.amount}</td>
+                                    <td className="rtdTable">{Creditincome.product}</td>
+                                    <td className="rtdTable">{Creditincome.amount}</td>
                                     
                                     
                                 </tr>
@@ -42,16 +40,18 @@ function incomeTabale({ rows }){
                                 <td colSpan="5" className="text-center">No Data found</td>
                             </tr>
                         )}
+                       
+            
             
             </tbody>
             </table>
-  
+ 
 
             </div>
-  <h3 style={{marginLeft:"60%"}}>Total Bank Incomes(Rs) :&emsp;{calculateTotalB()}/=</h3>
-  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+  <h3 style={{marginLeft:"56%"}}>Total Credit Incomes(Rs) :&emsp;{calculateTotalC()}/=</h3> 
+  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </div>
     )
 
 }
-export default incomeTabale;
+export default creditincomeTabale;
