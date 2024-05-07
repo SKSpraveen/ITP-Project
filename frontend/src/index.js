@@ -25,17 +25,20 @@ import DirectPageForm from './Pages/Anjana/DirectPageForm';
 import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
 import PaymentManagerDashboard from './Components/Samidi/OMComponents/PaymentManagerDashboard.js';
+import Orderpage_admin from './Components/Samidi/OMComponents/Orderpage_admin.js';
 
-
-import Repair from './Pages/Samidi/Repair';
-import Cart_View from './Installation/Cart_View';
 
 
 //Samidi
+import Repair from './Pages/Samidi/Repair';
+import Cart_View from './Installation/Cart_View';
+
 import OrderManagerDashboard from './Pages/Samidi/OrderManagerDashboard';
 import ViewTable from './Pages/Samidi/ViewTable';
+import UserViewTable from './Pages/Samidi/UserViewTable';
+import UpdateRepair from './Pages/Samidi/UpdateRepair';
 
-
+//Rasindu
 import Financialhome from './Pages/Rasindu/financialhome.js';
 import Addexpences from './Pages/Rasindu/Addexpences';
 import Expence from './Pages/Rasindu/expence';
@@ -43,7 +46,10 @@ import Income from './Pages/Rasindu/Income';
 import UpdateExpence from './Pages/Rasindu/update.js'
 import ExpenseReport from './Pages/Rasindu/ExpenseReport.js';
 import FinalReport from './Pages/Rasindu/finalReport.js';
-
+import BankIncome from './Pages/Rasindu/BankIncome.js';
+import CreditIncome from './Pages/Rasindu/CreditIncome.js'; 
+import DirecttIncome from './Pages/Rasindu/DirectIncome.js';
+import IncomeReport from './Pages/Rasindu/incomeReport.js';
 
 //Kavishka
 import Admin from './Pages/Kavishka/Admin.js';
@@ -56,16 +62,6 @@ import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
-
-//Nuwani
-import CompUser from './Pages/Nuwani/Complaintportal/CompUser';
-import Users from './Pages/Nuwani/Users';
-import Accord from './Pages/Nuwani/supportportal/Accord';
-import FAQs from './Pages/Nuwani/supportportal/FAQs';
-import SupportAdmin from './Pages/Nuwani/SupportAdmin';
-import Nonregfeedback from './Pages/Nuwani/Nonregfeedback';
-import ComplaintAdmin from './Pages/Nuwani/Complaintportal/ComplaintAdmin';
-import Aboutuspage from './Aboutus/Aboutuspage';
 
 
 
@@ -100,8 +96,8 @@ ReactDOM.render(
 
         <Route path='/omdashboard' element={<OrderManagerDashboard />} />
         <Route path='/viewTable' element={<ViewTable />} />
-
-        
+        <Route path='/UserviewTable' element={<UserViewTable />} />
+        <Route path='/editRepair/:itemId' element={<UpdateRepair />} />
 
         
 
@@ -113,6 +109,10 @@ ReactDOM.render(
         <Route path='/updateExpence/:expenceId' element={<UpdateExpence />}/>
         <Route path='/report' element={<ExpenseReport />}/>
         <Route path='/finalReport' element={<FinalReport/>}/>
+        <Route path='/Bankintable' element={<BankIncome/>}/>
+        <Route path='/Cardintable' element={<CreditIncome/>}/>
+        <Route path='/Directintable' element={<DirecttIncome/>}/>
+        <Route path='/incomeReport' element={<IncomeReport/>}/>
 
         <Route path='/signup' element={< Signup />} />
         <Route path='/userhome' element={<UserHome/>}/>
@@ -131,17 +131,7 @@ ReactDOM.render(
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
-      {/*Nuwani*/}
-      <Route path='/users' element={<Users />} />
-      <Route path='/faqs' element={<Accord />} />
-      <Route path='/faqadmin' element={<FAQs  />} />
-      <Route path='/support' element={<SupportAdmin />} /> 
-      <Route path='/complaints' element={<CompUser />} />
-      <Route path='/nonregfeed' element={<Nonregfeedback />} />
-      <Route path='/compadmin' element={<ComplaintAdmin />} />
-      <Route path='/aboutus' element={<Aboutuspage />} />
-     
-      
+
         
       </Routes>
       </AuthContextProvider>

@@ -26,7 +26,7 @@ function AdminPanel() {
         }
     }, [user]);
 
-       const handleDelete = async (email) => {
+    const handleDelete = async (email) => {
         try {
             await Axios.delete(
                 `http://localhost:8070/api/auth/Staff/${email}`,
@@ -47,9 +47,17 @@ function AdminPanel() {
 
     const generatePDF = () => {
         const doc = new jsPDF();
-        doc.autoTable({ html: '#user-table' });
+        const tableData = dataList.map(user => [user.name, user.email, user.role, user.phoneNumber]);
+        const headers = [['Name', 'Email', 'Role', 'Contact Number']];
+    
+        doc.autoTable({
+            head: headers,
+            body: tableData,
+        });
+    
         doc.save('users.pdf');
     };
+    
 
     const handleSearchArea = (e) => {
         const searchQuery = e.target.value.toLowerCase();
@@ -60,7 +68,7 @@ function AdminPanel() {
                 return (
                     user.name.toLowerCase().includes(searchQuery) ||
                     user.email.toLowerCase().includes(searchQuery) ||
-                    (user.address && user.address.toLowerCase().includes(searchQuery)) || // Check if address exists
+                    (user.role && user.role.toLowerCase().includes(searchQuery)) || // Check if role exists
                     (user.phoneNumber && user.phoneNumber.includes(searchQuery)) // Check if phoneNumber exists
                 );
             });
@@ -69,7 +77,7 @@ function AdminPanel() {
     };
 
     return (
-        <div style={{ minHeight: '100vh' }}>
+        <div className="body1" style={{ minHeight: '100vh' }}>
             <div className="header">
                 <br /><br />
                 <h2>Welcome Admin Dashboard !</h2>

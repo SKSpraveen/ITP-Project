@@ -5,7 +5,6 @@ const cors = require('cors')
 const app = express()
 const host = 'localhost';
 const router=require('../BACKEND/routes/Anjana/router.js')
-const routerN = require('../BACKEND/routes/Nuwani/router.js');
 
 require('dotenv').config();
 const dotenv = require("dotenv");
@@ -28,7 +27,7 @@ const connect = async () =>{
 };
 connect();
 app.use('/api', router);
-
+app.use('/api', router2);
 const server =app.listen(PORT,host,()=>{
 
     console.log(`Node server is listening to ${server.address().port}`)

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate ,useLocation} from 'react-router-dom';
 import Header from "../../Components/Header";
 import Footer from "../../Components/Footer";
 import NumberPage from './NumberPage';
@@ -10,6 +10,7 @@ import DirectPageForm from './DirectPageForm';
 import { Padding, Payment } from '@mui/icons-material';
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import MyCart from '../../InstallationComponents/MyCart';
 
 
 const styles = {
@@ -29,6 +30,8 @@ const styles = {
 
 function Payments() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const { product, amount, orderQuantity } = location.state || { product: '', amount: '', orderQuantity: '' };
     const [activeSelector, setActiveSelector] = useState(null);
     const [card, setCard] = useState('');
     const [cname, setCname] = useState('');
@@ -39,11 +42,12 @@ function Payments() {
     const [rgname, setRgname] = useState('');
     const [cemail, setCemail] = useState('');
     const [contactnumber, setContactnumber] = useState('');
-    const [amount, setAmount] = useState('');
+    
     const [accountnumber, setAccountNumber] = useState('');
     const [slip, setSlip] = useState('');
-    const [orderQuantity,setorderQuantity]=useState('')
-    const [product,setproduct]=useState('')
+    const [productState, setProduct] = useState(product);
+    const [amountState, setAmount] = useState(amount);
+    const [orderQuantityState, setOrderQuantity] = useState(orderQuantity);
 
     const handleSelectorClick = (selectorId) => {
         setActiveSelector((prevSelector) => (prevSelector === selectorId ? null : selectorId));
@@ -205,7 +209,7 @@ function Payments() {
                                             </div>
                                             <div className="px-2 col-lg-5 mb-3">
                                                         <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Amount</label>
-                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
+                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amountState} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                             </div>
 
@@ -242,14 +246,14 @@ function Payments() {
                                             &emsp; <div className="col-lg-5">
                                                     <div className="mb-3">
                                                         <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
-                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                        <input type="number" className="form-control" value={orderQuantityState} onChange={e => setOrderQuantity(e.target.value)}  />
                                                     </div>
                                                     </div>
 
                                             </div>
                                             <div className="px-1 col-lg-9 mb-3">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
-                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={productState} onChange={e => setProduct(e.target.value)} />
                                             </div>
 
                                             <br/> <br/>
@@ -301,7 +305,7 @@ function Payments() {
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
                                                         <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)" }}>Amount</label>
-                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
+                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amountState} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                                 </div>
                                             </div>
@@ -313,14 +317,14 @@ function Payments() {
                                             <div className="col-lg-5">
                                                     <div className="mb-3">
                                                         <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
-                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                        <input type="number" className="form-control" value={orderQuantityState} onChange={e => setOrderQuantity(e.target.value)}  />
                                                     </div>
                                                     </div>
 
                                             </div>
                                             <div className="px-1 col-lg-9 mb-3">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
-                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={productState} onChange={e => setProduct(e.target.value)} />
                                             </div>
                                             <br>
                                             </br>
@@ -376,7 +380,7 @@ function Payments() {
                                             <div className="col-lg-5">
                                                     <div className="mb-3">
                                                         <label className="form-label" style={{  color: "rgba(255, 74, 2, 0.816)" }}>Quantity</label>
-                                                        <input type="number" className="form-control" value={orderQuantity} onChange={e => setorderQuantity(e.target.value)}  />
+                                                        <input type="number" className="form-control" value={orderQuantityState} onChange={e => setOrderQuantity(e.target.value)}  />
                                                     </div>
                                                     </div>
 
@@ -391,13 +395,13 @@ function Payments() {
                                                 <div className="col-lg-3">
                                                     <div className="mb-3">
                                                         <label className="form-label"style={{  color: "rgba(255, 74, 2, 0.816)"}}>Amount</label>
-                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amount} onChange={e => setAmount(e.target.value)} />
+                                                        <input type="number" className="form-control" placeholder="EX:10000" value={amountState} onChange={e => setAmount(e.target.value)} />
                                                     </div>
                                                 </div>
                                             </div>
                                             <div className="px-1 col-lg-9 mb-3">
                                             &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<label className="form-label"style={{color: "rgba(255, 74, 2, 0.816)" }}>Product</label>
-                                                 <input type="text" className="form-control" placeholder="CCTV" value={itemDetails.product} onChange={e => product(e.target.value)} />
+                                                 <input type="text" className="form-control" placeholder="CCTV" value={productState} onChange={e => setProduct(e.target.value)} />
                                             </div>
                                             <br>
                                             </br>
