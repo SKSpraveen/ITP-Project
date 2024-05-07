@@ -69,7 +69,7 @@ const handleSubmit = (e) => {
     return (
 
         <div className="fu">
-            <button style={{color:"#ffffff",padding:"4px 10px",fontSize:"20px", background:"#f56f42",marginTop:"20px",marginLeft:"20px",borderRadius:"20px"}} onClick={()=> navigate('/exform')}>Back</button>
+            <button style={{color:"#ffffff",padding:"4px 10px",fontSize:"18px", background:"#f56f42",marginTop:"17px",marginLeft:"90%",borderRadius:"10px"}} onClick={()=> navigate('/exform')}>Back</button>
         
 
             <div className="container_exform">
@@ -111,6 +111,7 @@ const handleSubmit = (e) => {
             </form>
             <br />
         </div>
+        <br /> <br /> <br /> <br /> <br />
         </div>
     );
 }

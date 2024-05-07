@@ -60,7 +60,7 @@ const ExpenceTable = ({ rows }) => {
                                         <button style={{ color: "#ffffff", padding: "5px 10px ", fontSize: "17px", background: '#4634eb' ,width:'100px'}} onClick={() => navigate(`/updateExpence/${expense._id}`)} type="button" className="btn btn-primary">Update</button>
                                     
                                     
-                                        <button style={{ color: "#ffffff", padding: "5px 10px", fontSize: "17px", background: '#fa5928' ,width:'100px' }} onClick={() => deleteExpense(expense._id)} type="button" className="btn btn-primary">Delete</button>
+                                        <button style={{ color: "#ffffff", padding: "5px 10px", fontSize: "17px", background: 'red' ,width:'100px' }} onClick={() => deleteExpense(expense._id)} type="button" className="btn btn-primary">Delete</button>
                                     </td>
                                 </tr>
                             ))
