@@ -27,15 +27,15 @@ function Footer(){
                         <div class="card-body" style={{textAlign:"center",color:"white"}}>
                             <h6 class="card-title" style={{textAlign:"center",fontWeight:"900",color:"rgba(255, 74, 2, 0.816)"}}><u>Info</u></h6>
                             <br />
-                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="#">Aboutus</a></h6>
+                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="aboutus">Aboutus</a></h6>
                             <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="#">Terms & conditions</a></h6>
                             <br />
                             <h6 class="card-title" style={{textAlign:"center",fontWeight:"900",color:"rgba(255, 74, 2, 0.816)"}}><u>Customer Service</u></h6>
                             <br />
-                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="#">My Account</a></h6>
-                            <h6 class="card-title" ><a className="nav-lin1k" style={{textDecoration:"none",color:"white"}} href="#">FAQs</a></h6>
-                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="#">Complain</a></h6>
-                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="#">Feedback</a></h6>
+                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="signup">My Account</a></h6>
+                            <h6 class="card-title" ><a className="nav-lin1k" style={{textDecoration:"none",color:"white"}} href="faqs">FAQs</a></h6>
+                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="complaints">Complaint</a></h6>
+                            <h6 class="card-title" ><a className="nav-link1" style={{textDecoration:"none",color:"white"}} href="users">Feedback</a></h6>
                         </div>
                     </div>
                 </div>

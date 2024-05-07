@@ -71,9 +71,7 @@ import Salary_table from './Pages/kk/salary_table';
 import Final_report from './Pages/kk/final_report';
 import Em_add_emp from './Pages/kk/em_add_emp';
 import Profile_kk from './Pages/kk/profile';
-import Profile_p from './Pages/kk/profile2';
 import Emp_edit_InternForm from './Pages/kk/emp_edit_InternForm';
-import Emp_edit_PermanentForm from './Pages/kk/emp_edit_permanentForm';
 import Salary_cal from './Pages/kk/salary_cal';
 
 
@@ -158,9 +156,7 @@ ReactDOM.render(
     <Route path='/finReport' element={<Final_report />} />
     <Route path='/addEmp' element={<Em_add_emp />} />
     <Route path='/profile_kk' element={<Profile_kk />} />
-    <Route path='/profile_p' element={<Profile_p />} />
     <Route path='/emp_edit_internForm' element={<Emp_edit_InternForm />} />
-    <Route path='/emp_edit_permanentForm' element={<Emp_edit_PermanentForm />} />
     <Route path='/salary_cal' element={<Salary_cal />} />
       </Routes>
       </AuthContextProvider>
