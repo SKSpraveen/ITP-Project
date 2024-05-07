@@ -55,8 +55,21 @@ import StaffSignup from './Pages/Kavishka/StaffSignup.js'
 import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
-import Manegars from './Pages/Kavishka/manegars.js'
+import Manegars from './Pages/Kavishka/manegars.js';
 
+//salindu
+import VehicleTable from './Pages/Salindu/VehicleTable.js';
+import ShuttleDetails from './Pages/Salindu/ShuttleDetails.js';
+import Report from './Pages/Salindu/Report.js';
+import RequestTable from './Pages/Salindu/RequestTable.js';
+import Shuttlerequestform from './Pages/Salindu/Shuttlerequestform.js';
+import Transportationform from './Pages/Salindu/Transportationform.js';
+import VehicleDetails from './Pages/Salindu/VehicleDetails.js';
+import Tableedit from './Components/Salindu/Tableedit.js';
+import Editdetails from './Components/Salindu/editdetails.js';
+import Headert from './Components/Salindu/Headert.js';
+import Requestdisplay from './Pages/Salindu/requestdisplay.js';
+import Transportation from './Components/Salindu/Transportation.js';
 
 
 
@@ -121,9 +134,30 @@ ReactDOM.render(
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
-
-        
+     
+     
+      
+      <Route path="/vehicletable" element={<VehicleTable/>} />
+      <Route path="/shuttledetails" element={<ShuttleDetails/>} />
+      <Route path="/report_s" element={<Report/>}/>
+      <Route path="/requesttable" element={<RequestTable/>}/>
+      <Route path="/shuttledetails" element={<ShuttleDetails/>}/>
+      <Route path="/shuttlerequestform" element={<Shuttlerequestform/>}/>
+      <Route path="/transportationform" element={<Transportationform/>}/>
+      <Route path="/vehicledetails" element={<VehicleDetails/>}/>
+      <Route path="/vehicletable" element={<VehicleTable/>}/>
+      <Route path="/tableedit" element={<Tableedit/>}/>
+      <Route path="/editdetails" element={<Editdetails/>}/> 
+      <Route path="/headert" element={<Headert/>}/>
+      <Route path="/transportation" element={<Transportation/>}/>
+      <Route path="/requestdisplay" element={<Requestdisplay/>}/>
+      
+      
+      
       </Routes>
+
+
+
       </AuthContextProvider>
   </BrowserRouter>,
   document.getElementById('root')
