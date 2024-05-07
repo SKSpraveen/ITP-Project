@@ -84,11 +84,11 @@ const CompUserForm = ({ addComps, updateComps, submitted, data, isEdit }) => {
                 <div id="popupsmart-feedback">
                     <form onSubmit={handleSubmit}>
                         <label class="labelnuw" htmlFor="uname">Username:</label>
-                        <input type="text" id="uname" name="uname" value={uname} onChange={handleUnameChange}/><br /><br />
+                        <input class="inputnuw" type="text" id="uname" name="uname" value={uname} onChange={handleUnameChange}/><br /><br />
                         <label class="labelnuw" htmlFor="email">Email:</label>
-                        <input type="email" id="email" name="email" value={email} onChange={handleEmailChange}/><br /><br />
+                        <input  class="inputnuw"type="email" id="email" name="email" value={email} onChange={handleEmailChange}/><br /><br />
                         <label class="labelnuw" htmlFor="category">Category</label>
-                        <select id="category" name="category" value={category} onChange={handleCategoryChange}>
+                        <select class="selectnuw"  id="category" name="category" value={category} onChange={handleCategoryChange}>
                             <option value="">Select a category</option>
                             <option value="Installation">Installation</option>
                             <option value="Repairing">Repairing</option>

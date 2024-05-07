@@ -37,7 +37,7 @@ body {
   font-size: larger;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.input[type="email"], textarea {
+.inputnuw[type="email"], textarea {
   width: 97%;
   padding: 5px;
   margin-top: 5px;
@@ -45,7 +45,7 @@ body {
   border-radius: 3px;
 }
 
-select {
+.selectnuw {
   width: 97%;
   padding: 5px;
   margin-top: 5px;
