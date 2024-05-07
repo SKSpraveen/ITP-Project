@@ -9,7 +9,7 @@ body {
   background-color: #343a40;
   padding: 20px;
   border-radius: 10px;
-  max-width: 400px; /* Decreased width */
+  max-width: 500px; /* Decreased width */
   margin: 0 auto;
 }
 
@@ -75,7 +75,7 @@ body {
 
 
 
-.form-container {
+.form-container1 {
   margin-top: 0%; /* Adjust the gap between header and form */
   display: flex;
   justify-content: center;

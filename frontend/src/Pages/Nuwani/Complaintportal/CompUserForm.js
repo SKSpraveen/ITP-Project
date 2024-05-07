@@ -85,7 +85,7 @@ const CompUserForm = ({ addComps, updateComps, submitted, data, isEdit }) => {
                 <h1 style={{fontSize:"35px",padding:"4px"}}>Make a Complaint</h1>
             </div>
             <br /> 
-            <div className="form-container">
+            <div className="form-container1">
             <br /><br />
                 <div id="popupsmart-feedback">
                     <form onSubmit={handleSubmit}>

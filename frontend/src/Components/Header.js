@@ -129,7 +129,7 @@ function Header() {
                             </li>
 
                             <li className="nav-item" style={{ marginLeft: "23%" }}>
-                                <button className="nav-btn" onClick={() => navigate("/")}>
+                                <button className="nav-btn" onClick={() => navigate("/aboutus")}>
                                     {" "}
                                     <a className="nav-link_H" href="aboutus">
                                         Aboutus
@@ -138,7 +138,7 @@ function Header() {
                             </li>
 
                             <li className="nav-item" style={{ marginLeft: "23%" }}>
-                                <button className="nav-btn" onClick={() => navigate("/")}>
+                                <button className="nav-btn" onClick={() => navigate("/complaints")}>
                                     {" "}
                                     <a className="nav-link_H" href="complaints">
                                         Complaint

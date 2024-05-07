@@ -137,14 +137,14 @@ const UserProfile = () => {
           <br />
           <br />
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <button type="button" style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
+            <button type="button" onClick={()=> navigate('/')} style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
               Feedback
             </button>
           </li>
           <br />
           <li style={{ marginBottom: "10px", fontSize: "25px" }}>
-            <button type="button" style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
-              Complain
+            <button type="button" onClick={()=> navigate('/UserviewTable')} style={{ border: "none", backgroundColor: "#242424", color: "white", textDecoration: "none", marginLeft: "20%" }}>
+              Complaint
             </button>
           </li>
           <br />

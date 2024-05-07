@@ -6,7 +6,10 @@ import Button from '@mui/material/Button';
 import { jsPDF } from "jspdf";
 import "jspdf-autotable";
 
+
+
 const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
+ 
   const [rowData, setRowData] = useState(rows);
   const [completedCount, setCompletedCount] = useState(0);
 
@@ -65,7 +68,6 @@ const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
 
   return (
     <div>
-      <br /><br />
       <div className="total-complaints-container">
         <div className="total-complaints-box1">
           <h5>Total Complaints: {rows.length}</h5>
@@ -77,7 +79,7 @@ const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
           <Button variant="contained" onClick={handleGenerateReport}>Generate report</Button>
         </div>
       </div>
-      <br /><br />
+      <br />
 
       <table className="user-table">
         <thead>
@@ -118,7 +120,7 @@ const CompAdminTable = ({ rows, selectedUser, deleteComps, searchKeyword }) => {
           ))}
         </tbody>
       </table>
-     
+     <br /> <br /> <br />
     </div>
   );
 }
