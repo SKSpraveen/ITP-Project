@@ -5,7 +5,7 @@ import UpdateExpence from '../../Components/Rasindu/updateExpence';
 
 function Update(){
     return (
-        <div>
+        <div className='body1'>
           <Header />
           <br/>
           <UpdateExpence />
