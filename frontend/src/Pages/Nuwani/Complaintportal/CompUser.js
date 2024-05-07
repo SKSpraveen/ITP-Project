@@ -90,6 +90,7 @@ const CompUser = () => {
                data={selectedUser}
                isEdit={isEdit}
             />
+            <br />
             <CompUserTable 
             rows={complaints}
             selectedUser={data => {

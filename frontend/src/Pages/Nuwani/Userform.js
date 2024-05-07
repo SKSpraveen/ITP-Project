@@ -110,8 +110,14 @@ const UserForm = ({ addUser, updateUser, submitted, data, isEdit }) => {
   return (
     <div>
       <Header /> 
+      <br /><br />
+      <div style={{backgroundColor:"rgba(16, 16, 16, 0.926)",height:"56px"}}>
+                <h1 style={{fontSize:"35px",padding:"4px"}}>Provide Us Your Feedback</h1>
+            </div>
+            <br />
       <div className="form-container">
         <div id="popupsmart-feedback">
+          <br />
           <h2 class="h2nuw">We appreciate your feedback!</h2>
           <p class="pnuw">We are always looking for ways to improve your experience. 
             Please take a moment to evaluate and tell us what you think.</p>

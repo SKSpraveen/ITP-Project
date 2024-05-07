@@ -41,10 +41,10 @@ const CompUserTable = ({ rows, totalComplaints, selectedUser, deleteComps }) => 
               <td>{row.category}</td>
               <td>{row.complaint}</td>
               <td>
-                <button style={{ marginRight: '10px', backgroundColor: 'black', color: 'white' }} onClick={() => handleEditClick(row)} aria-label="Edit">
+                <button style={{ marginRight: '10px', backgroundColor: 'blue', color: 'white' }} onClick={() => handleEditClick(row)} aria-label="Edit">
                   Edit
                 </button>
-                <button style={{ backgroundColor: '#FE5000', color: 'white' }} onClick={() => handleDeleteClick(row.id)} aria-label="Delete">
+                <button style={{ backgroundColor: 'red', color: 'white' }} onClick={() => handleDeleteClick(row.id)} aria-label="Delete">
                   Delete
                 </button>
               </td>
@@ -52,6 +52,7 @@ const CompUserTable = ({ rows, totalComplaints, selectedUser, deleteComps }) => 
           ))}
         </tbody>
       </table>
+      <br /><br />
       <Footer />
     </div>
   );

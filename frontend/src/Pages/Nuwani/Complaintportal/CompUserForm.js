@@ -80,7 +80,13 @@ const CompUserForm = ({ addComps, updateComps, submitted, data, isEdit }) => {
     return (
         <div>
             <Header /> 
+            <br /><br />
+            <div style={{backgroundColor:"rgba(16, 16, 16, 0.926)",height:"56px"}}>
+                <h1 style={{fontSize:"35px",padding:"4px"}}>Make a Complaint</h1>
+            </div>
+            <br /> 
             <div className="form-container">
+            <br /><br />
                 <div id="popupsmart-feedback">
                     <form onSubmit={handleSubmit}>
                         <label class="labelnuw" htmlFor="uname">Username:</label>

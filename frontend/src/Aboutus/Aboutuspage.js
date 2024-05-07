@@ -39,6 +39,7 @@ const Aboutuspage = ({ rows, selectedUser, deleteUser }) => {
   return (
     <div className="aboutus-container">
       <Header /> 
+      <br />
       <div className="aboutus-section">
         <img src={aboutusImage} className="aboutus-image" alt="About Us" />
         <div className="aboutus-content">
@@ -80,7 +81,7 @@ const Aboutuspage = ({ rows, selectedUser, deleteUser }) => {
         </div>
         <img src={getintouchImage} className="section-image scroll-animation" alt="Get in Touch" />
       </div>
-
+<br /><br /><br />
       <Footer />
     </div>
   );
