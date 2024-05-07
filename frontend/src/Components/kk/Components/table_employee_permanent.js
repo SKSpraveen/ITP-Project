@@ -10,7 +10,7 @@ const Table_employee_permanent = ({rows2,fetchData}) =>{
     const navigate = useNavigate();
     
     const viewProfile = (employee) => {
-        navigate('/profile_kk', { state: { employeeData: employee } });
+        navigate('/profile_p', { state: { employeeData: employee } });
     };
 
     const handleDelete2 = async (nic) => {

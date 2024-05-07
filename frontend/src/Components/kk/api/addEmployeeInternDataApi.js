@@ -12,6 +12,7 @@ export const getEmployee_intern = () => {
 
 
 
+
 export const addEmployee_intern = (data) => {
     const payload = {
         name: data.name,

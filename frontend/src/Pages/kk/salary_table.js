@@ -61,6 +61,7 @@ const Salary_table=({}) =>{
     return (
         <Box className='body1'>
             <NavHead />
+            <br/>
             <div className="btn-group" role="group" aria-label="Basic example">
                 <button
                     type="button"

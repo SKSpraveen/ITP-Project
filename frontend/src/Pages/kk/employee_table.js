@@ -128,6 +128,7 @@ const EmployeeTable = () => {
     return (
         <Box className='body1'>
             <NavHead />
+            <br/>
             <div className="button_cont">
                 <button type="button" className="button-42" onClick={addEmployee}>ADD New Employee</button>
             </div>

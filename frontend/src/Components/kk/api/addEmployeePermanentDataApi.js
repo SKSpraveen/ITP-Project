@@ -40,3 +40,14 @@ export const addEmployee_permanent = (data) => {
         throw error;
     }
   };
+
+  export const updateEmployee_permanent = async (data) => {
+    try {
+        // Send a POST request to the backend API endpoint for updating employee data
+        const response = await Axios.post('http://localhost:8070/api/updateEmployee_permanent', data);
+        return response.data; // Return the response data
+    } catch (error) {
+        console.error("Axios error:", error);
+        throw error;
+    }
+  };

@@ -2,9 +2,9 @@ import '../../Components/kk/css/em_add_emp_form.css';
 import * as React from 'react';
 import { Box, Button, Input } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { updateEmployee_intern } from '../../Components/kk/api/addEmployeeInternDataApi';
+import { updateEmployee_permanent} from '../../Components/kk/api/addEmployeePermanentDataApi';
 
-const Emp_edit_InternForm = () => {
+const Emp_edit_PermanentForm = () => {
     const navigate = useNavigate();
     const { state } = useLocation();
     const [loading, setLoading] = React.useState(true);
@@ -23,9 +23,9 @@ const Emp_edit_InternForm = () => {
         event.preventDefault();
         try {
             // Send a POST request to update the employee data
-            await updateEmployee_intern(employeeData);
+            await updateEmployee_permanent(employeeData);
             // Redirect to the profile page after successful update
-            navigate('/profile_kk', { state: { employeeData } });
+            navigate('/profile_p', { state: { employeeData } });
         } catch (error) {
             console.error('Error updating employee data:', error);
         }
@@ -35,7 +35,7 @@ const Emp_edit_InternForm = () => {
     }
     return(
         <Box className='body1'>
-<div className="container">
+        <div className="container">
            
 
             <form className="row g-3" onSubmit={handleSubmit}>
@@ -73,15 +73,15 @@ const Emp_edit_InternForm = () => {
         </div>
 
         <div className="col-md-5">
-            <button type="button" className="btn btn-primary" onClick={()=> navigate('/profile_kk', { state: { employeeData }})}>Cancel</button>
+            <button type="button" className="btn btn-primary" onClick={()=> navigate('/profile_p', { state: { employeeData }})}>Cancel</button>
         </div>
     </form>
     <br />
-        </div>
+   </div>
 
 </Box>
     )
 }
 
 
-export default Emp_edit_InternForm;
+export default Emp_edit_PermanentForm;
