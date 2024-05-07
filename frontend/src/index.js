@@ -25,6 +25,7 @@ import DirectPageForm from './Pages/Anjana/DirectPageForm';
 import BankPageForm from './Pages/Anjana/BankPageForm';
 import Payments from './Pages/Anjana/Payments';
 import PaymentManagerDashboard from './Components/Samidi/OMComponents/PaymentManagerDashboard.js';
+import Orderpage_admin from './Components/Samidi/OMComponents/Orderpage_admin.js';
 
 
 
@@ -143,7 +144,8 @@ ReactDOM.render(
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
       <Route path="/omdashboard" element={<OM_Dashboard_Content/>}/>
-
+      <Route path="/orderpagea" element={<Orderpage_admin/>}/>
+      
         
 
 
