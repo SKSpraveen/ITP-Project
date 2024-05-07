@@ -1,18 +1,17 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
+
 import '../../Components/Rasindu/css/table.css';
 
-
-function incomeTabale({ rows }){
+function directincomeTabale({ rows }){
     // Function to calculate total amount
-    const calculateTotalB = () => {
+    const calculateTotalD = () => {
         let total = 0;
-        rows.forEach(Bankincome => {
-            total += Bankincome.amount;
+        rows.forEach(Directincome => {
+            total += Directincome.amount;
         });
         return total;
     };
-
+    
 
     
     return(
@@ -29,29 +28,32 @@ function incomeTabale({ rows }){
             </thead>
             <tbody className="table-hover">
             {rows && rows.length > 0 ? (
-                            rows.map((Bankincome, index) => (
+                            rows.map((Directincome, index) => (
                                 <tr className="rtrTable" key={index}>
-                                    <td className="rtdTable">{Bankincome.product}</td>
-                                    <td className="rtdTable">{Bankincome.amount}</td>
-                                    
-                                    
+                                    <td className="rtdTable">{Directincome.product}</td>
+                                    <td className="rtdTable">{Directincome.amount}</td>
+
                                 </tr>
+
                             ))
                         ) : (
                             <tr>
                                 <td colSpan="5" className="text-center">No Data found</td>
                             </tr>
                         )}
+                       
+                        
+            
             
             </tbody>
             </table>
-  
+         
 
             </div>
-  <h3 style={{marginLeft:"60%"}}>Total Bank Incomes(Rs) :&emsp;{calculateTotalB()}/=</h3>
-  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+  <h3 style={{marginLeft:"60%"}}> Total Direct Incomes(Rs) :&emsp{calculateTotalD()}</h3>
+  <br /><br /><br /><br /><br /><br />
         </div>
     )
 
 }
-export default incomeTabale;
+export default directincomeTabale;
