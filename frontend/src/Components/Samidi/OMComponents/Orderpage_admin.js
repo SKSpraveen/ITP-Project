@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import "../../../Pages/Samidi/OrderManager.css";
+
 
 function OM_Dashboard_Header() {
     const navigate = useNavigate();
@@ -28,7 +30,116 @@ function OM_Dashboard_Header() {
       )
 }
 function Orderpage_admin() {
-   
+const [cardPayments, setCardPayments] = useState([]);
+    const [bankPayments, setBankPayments] = useState([]);
+    const [directPayments, setDirectPayments] = useState([]);
+
+    useEffect(() => {
+        // Fetch Card Payments
+        axios.get('http://localhost:8070/api/cards')
+            .then(response => {
+                setCardPayments(response.data);
+            })
+            .catch(error => console.error("Error fetching card payments:", error));
+
+        // Fetch Bank Payments
+        axios.get('http://localhost:8070/api/bpayment')
+            .then(response => {
+                setBankPayments(response.data);
+            })
+            .catch(error => console.error("Error fetching bank payments:", error));
+
+        // Fetch Direct Payments
+        axios.get('http://localhost:8070/api/dpayment')
+            .then(response => {
+                setDirectPayments(response.data);
+            })
+            .catch(error => console.error("Error fetching direct payments:", error));
+    }, []);
+
+    return (
+        <div className="body1">
+            <OM_Dashboard_Header />
+            <div className="container4" >
+            &emsp;&emsp;&emsp;&emsp;&emsp;<h3 style={{fontWeight:"700",marginLeft:"40%"}}>Payment Details</h3>
+                <br>
+
+                </br>
+                <div className="table-responsive">
+                &emsp;&emsp;&emsp;&emsp;&emsp;  <h4 style={{marginLeft:"8%"}}>Card Payments</h4>
+                <br>
+                
+                </br>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Order Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {cardPayments.map((payment) => (
+                                <tr key={payment._id}>
+                                    <td>{payment.product}</td>
+                                    <td>{payment.orderQuantity}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <br>
+                    
+
+
+                    </br>
+                    <h4 style={{marginLeft:"8%"}}>Bank Payments</h4>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Order Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {bankPayments.map((payment) => (
+                                <tr key={payment._id}>
+                                    <td>{payment.product}</td>
+                                    <td>{payment.orderQuantity}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <br>
+                    
+
+                    
+                    </br>
+
+                    <h4 style={{marginLeft:"8%"}}>Direct Payments</h4>
+                    <table className="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Order Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {directPayments.map((payment) => (
+                                <tr key={payment._id}>
+                                    <td>{payment.product}</td>
+                                    <td>{payment.orderQuantity}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <br>
+                    
+
+                    
+                    </br>
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default Orderpage_admin;
