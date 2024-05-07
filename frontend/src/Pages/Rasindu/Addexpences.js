@@ -5,7 +5,7 @@ import AddExpencesForm from '../../Components/Rasindu/AddExpencesForm';
 
 function Addexpences() {
   return (
-    <div>
+    <div className="body1" >
       <Header />
       <br/>
       <AddExpencesForm />

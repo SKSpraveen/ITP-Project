@@ -99,7 +99,7 @@ function ExpenseReport(){
 
 
     return(
-    <div>
+    <div className="body1">
            <Header />
            <br />
            <br />
@@ -134,7 +134,7 @@ function ExpenseReport(){
            <br></br>
            <br></br>
            
-           <div className="container" id='report'>
+           <div className="container" id='report' style={{backgroundColor:" #fff"}}>
                 <p className='rReportp'>Protons E&E</p>
                 <p className='rReportp'>+94 774015896</p>
                 <p className='rReportp'>protons@gmail.com</p>
@@ -182,6 +182,8 @@ function ExpenseReport(){
                 </div>
             </div>
         </div>
+        <br></br>
+        <br></br>
     </div>
     )
 }

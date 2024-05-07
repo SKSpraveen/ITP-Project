@@ -1,35 +1,55 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import '../../Components/Rasindu/css/table.css';
 
-function incomeTabale(){
+
+function incomeTabale({ rows }){
+    // Function to calculate total amount
+    const calculateTotalB = () => {
+        let total = 0;
+        rows.forEach(Bankincome => {
+            total += Bankincome.amount;
+        });
+        return total;
+    };
+
+
+    
     return(
         <div>
             <div className="rtable-possition">
             <table className="rtable-fill">
             <thead>
             <tr className="rtrTable">
-            <th className="rthTable">Income Title</th>
+            <th className="rthTable">Product Name</th>
             <th className="rthTable">Amount(Rs.)</th>
-            <th className="rthTable">Date</th>
-            <th className="rthTable">Category</th>
+            
             
             </tr>
             </thead>
             <tbody className="table-hover">
-            <tr className="rtrTable">
-            <td className="rtdTable">sell item</td>
-            <td className="rtdTable">23500</td>
-            <td className="rtdTable">09/03/2024</td>
-            <td className="rtdTable">Cash</td>
-            </tr>
-            
+            {rows && rows.length > 0 ? (
+                            rows.map((Bankincome, index) => (
+                                <tr className="rtrTable" key={index}>
+                                    <td className="rtdTable">{Bankincome.product}</td>
+                                    <td className="rtdTable">{Bankincome.amount}</td>
+                                    
+                                    
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="5" className="text-center">No Data found</td>
+                            </tr>
+                        )}
             
             </tbody>
             </table>
   
 
             </div>
-
+  <h3 style={{marginLeft:"60%"}}>Total Bank Incomes(Rs) :&emsp;{calculateTotalB()}/=</h3>
+  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
         </div>
     )
 

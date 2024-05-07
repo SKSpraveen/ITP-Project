@@ -23,7 +23,7 @@ function FM_Dashboard_Header(){
                   </button>
                   <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <li><button className="dropdown-item" onClick={()=> navigate('/report')}>Expense Report</button></li>
-                    <li><button className="dropdown-item" onClick={()=> navigate('/income-report')}>Income Report</button></li>
+                    <li><button className="dropdown-item" onClick={()=> navigate('/incomeReport')}>Income Report</button></li>
                     <li><button className="dropdown-item" onClick={()=> navigate('/finalReport')}>Final Report</button></li>
                   </ul>
                 </div>                   &emsp;<button className="nav-link" onClick={()=> navigate('/')} id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</button>
