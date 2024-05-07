@@ -62,20 +62,16 @@ import { AuthContextProvider } from './context/AuthContext.js';
 import AdminDash from './Pages/Kavishka/adminDash.js';
 import StaffLogin from './Pages/Kavishka/StaffLogin.js';
 import Manegars from './Pages/Kavishka/manegars.js'
-import OM_Dashboard_Content from './Components/Samidi/OMComponents/OM_Dashboard_Content.js';
 
-//kk
-import Dashboard from './Pages/kk/dashboard';
-import Employee_table from './Pages/kk/employee_table';
-import Salary_table from './Pages/kk/salary_table';
-import Final_report from './Pages/kk/final_report';
-import Em_add_emp from './Pages/kk/em_add_emp';
-import Profile_kk from './Pages/kk/profile';
-import Emp_edit_InternForm from './Pages/kk/emp_edit_InternForm';
-import Salary_cal from './Pages/kk/salary_cal';
-
-
-
+//Nuwani
+import Users from './Pages/Nuwani/Users';
+import CompUser from './Pages/Nuwani/Complaintportal/CompUser';
+import Accord from './Pages/Nuwani/supportportal/Accord';
+import FAQs from './Pages/Nuwani/supportportal/FAQs';
+import SupportAdmin from './Pages/Nuwani/SupportAdmin';
+import Nonregfeedback from './Pages/Nuwani/Nonregfeedback';
+import Aboutuspage from './Aboutus/Aboutuspage';
+import ComplaintAdmin from './Pages/Nuwani/Complaintportal/ComplaintAdmin';
 
 
 ReactDOM.render(
@@ -143,21 +139,18 @@ ReactDOM.render(
       <Route path="/DirectPageForm" element={<DirectPageForm />} />
       <Route path="/BankPageForm" element={<BankPageForm/>} />
       <Route path="/PaymentManagerDashboard" element={<PaymentManagerDashboard/>}/>
-      <Route path="/omdashboard" element={<OM_Dashboard_Content/>}/>
-      <Route path="/orderpagea" element={<Orderpage_admin/>}/>
-      
+
+
+      <Route path='/users' element={<Users />} />
+      <Route path='/faqs' element={<Accord />} />
+      <Route path='/faqadmin' element={<FAQs  />} />
+      <Route path='/support' element={<SupportAdmin />} /> 
+      <Route path='/complaints' element={<CompUser />} />
+      <Route path='/nonregfeed' element={<Nonregfeedback />} />
+      <Route path='/compadmin' element={<ComplaintAdmin />} />
+      <Route path='/aboutus' element={<Aboutuspage />} />
+
         
-
-
-
-      <Route path='/dashboard' element={<Dashboard />} />
-    <Route path='/empTable' element={<Employee_table />} />
-    <Route path='/salTable' element={<Salary_table />} />
-    <Route path='/finReport' element={<Final_report />} />
-    <Route path='/addEmp' element={<Em_add_emp />} />
-    <Route path='/profile_kk' element={<Profile_kk />} />
-    <Route path='/emp_edit_internForm' element={<Emp_edit_InternForm />} />
-    <Route path='/salary_cal' element={<Salary_cal />} />
       </Routes>
       </AuthContextProvider>
   </BrowserRouter>,

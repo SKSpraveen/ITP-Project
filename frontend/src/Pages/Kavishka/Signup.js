@@ -69,7 +69,7 @@ function Signup() {
                 <div className="image-container" style={{ flex: "1", backgroundColor: "#f2f2f2" }}>
                     <img src="https://w0.peakpx.com/wallpaper/471/576/HD-wallpaper-cctv-security-cameras-security-cctv-tech.jpg" alt="Signup Image" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                 </div>
-                <div className="form-container" style={{ padding: "20px", width: "40%", backgroundColor: 'white' }}>
+                <div style={{ padding: "20px", width: "40%", backgroundColor: 'white' }}>
                     <div className="form-wrapper" style={{ padding: "30px", borderRadius: "10px", boxShadow: "0px 0px 10px 0px rgba(0,0,0,0.1)" }}>
                         <h2 style={{ color: "black", textAlign: "center", marginBottom: "30px" }}>Sign Up</h2>
                         <form onSubmit={handleSubmit}>
